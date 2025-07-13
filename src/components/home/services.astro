@@ -1,0 +1,70 @@
+---
+import Image from "astro/components/Image.astro";
+import {
+  default as AccessControlIcon,
+  default as GateControlIcon,
+} from "../../assets/icons/access-control.svg";
+import CCTVIcon from "../../assets/icons/cctv.svg";
+import AutomationIcon from "../../assets/icons/home-auto.svg";
+import IntercomIcon from "../../assets/icons/intercom.svg";
+import WifiIcon from "../../assets/icons/wifi.svg";
+
+const SERVICES = [
+  {
+    title: "Home Automation",
+    description: "Optimize your home with smart automation solutions.",
+    icon: AutomationIcon,
+  },
+  {
+    title: "Gate Control",
+    description: "Secure your property with advanced gate control systems.",
+    icon: GateControlIcon,
+  },
+  {
+    title: "CCTV Systems",
+    description: "Monitor your premises with high-definition CCTV solutions.",
+    icon: CCTVIcon,
+  },
+  {
+    title: "Intercom Systems",
+    description:
+      "Enhance communication within your premises with smart intercom solutions.",
+    icon: IntercomIcon,
+  },
+  {
+    title: "Access Control",
+    description: "Manage access to your premises with smart control systems.",
+    icon: AccessControlIcon,
+  },
+  {
+    title: "WiFi Systems",
+    description:
+      "Ensure seamless connectivity throughout your premises with advanced WiFi solutions.",
+    icon: WifiIcon,
+  },
+];
+---
+
+<div>
+  <h2 class="text-5xl font-extrabold uppercase">Services</h2>
+  <p class="text-lg">
+    Discover our range of smart home services designed to optimize your business
+    operations.
+  </p>
+
+  <div class="grid grid-cols-3 gap-4 mt-8 h-full">
+    {
+      SERVICES.map((service) => (
+        <div class="bg-base-200/50 rounded-3xl p-4">
+          <Image
+            src={service.icon}
+            alt={service.title}
+            class="w-16 h-16 mb-2"
+          />
+          <p class="font-bold">{service.title}</p>
+          <p>{service.description}</p>
+        </div>
+      ))
+    }
+  </div>
+</div>

@@ -1,0 +1,27 @@
+---
+import Image from "astro/components/Image.astro";
+import HeroImage from "../../assets/images/hero-img-1.png";
+import Button from "../../ui/button.astro";
+---
+
+<div
+  class="bg-base-200/50 rounded-3xl p-8 flex items-center justify-between gap-8"
+>
+  <div class="w-5/12 flex flex-col gap-4">
+    <h1 class="text-7xl font-extrabold uppercase">
+      smart home solutions for your business
+    </h1>
+    <p class="text-lg">
+      We provide innovative smart home solutions that enhance your business
+      efficiency and customer experience.
+    </p>
+    <Button text="Get free quote" />
+  </div>
+  <div class="w-7/12 relative">
+    <Image
+      src={HeroImage}
+      alt="Hero Image"
+      class="h-full w-full object-cover rounded-3xl"
+    />
+  </div>
+</div>
