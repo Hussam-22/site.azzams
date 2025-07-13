@@ -1,0 +1,95 @@
+---
+import Image from "astro/components/Image.astro";
+import Avatar1 from "../../assets/avatars/avatar-1.svg";
+import Avatar2 from "../../assets/avatars/avatar-2.svg";
+import Avatar3 from "../../assets/avatars/avatar-3.svg";
+import Avatar4 from "../../assets/avatars/avatar-4.svg";
+import Avatar5 from "../../assets/avatars/avatar-5.svg";
+import Avatar6 from "../../assets/avatars/avatar-6.svg";
+
+const testimonials = [
+  {
+    name: "John Doe",
+    role: "Homeowner",
+    image: Avatar1,
+    testimonial:
+      "Azzams transformed my home into a smart haven. Highly recommend!",
+    css: "border-r-2 border-r-black",
+  },
+  {
+    name: "Jane Smith",
+    role: "Business Owner",
+    image: Avatar2,
+    testimonial:
+      "Their service was top-notch, and the installation was seamless.",
+    css: "border-r-2 border-r-black",
+  },
+  {
+    name: "Alice Johnson",
+    role: "Tech Enthusiast",
+    image: Avatar3,
+    testimonial:
+      "The products are intuitive and have made my life so much easier.",
+  },
+  {
+    name: "Bob Brown",
+    role: "Contractor",
+    image: Avatar4,
+    testimonial:
+      "Professional team with great attention to detail. Loved working with them!",
+    css: "border-r-2 border-r-black",
+  },
+  {
+    name: "Charlie Davis",
+    role: "Interior Designer",
+    image: Avatar5,
+    testimonial:
+      "Their smart home solutions blend perfectly with modern design aesthetics.",
+    css: "border-r-2 border-r-black",
+  },
+  {
+    name: "Diana Prince",
+    role: "Architect",
+    image: Avatar6,
+    testimonial:
+      "Innovative technology that enhances both functionality and style.",
+  },
+  //   {
+  //     name: "Ethan Hunt",
+  //     role: "Engineer",
+  //     image: "/images/ethan.jpg",
+  //     testimonial:
+  //       "Impressed with the quality and reliability of their smart home systems.",
+  //   },
+  //   {
+  //     name: "Fiona Green",
+  //     role: "Real Estate Agent",
+  //     image: "/images/fiona.jpg",
+  //     testimonial: "Azzams' solutions add significant value to any property.",
+  //   },
+];
+---
+
+<div class="flex flex-col gap-8">
+  <h2 class="text-5xl font-extrabold uppercase">Testimonials</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {
+      testimonials.map((testimonial) => (
+        <div class={`p-6 ${testimonial.css}`}>
+          <div class="flex items-center gap-4 mb-4">
+            <Image
+              src={testimonial.image}
+              alt={testimonial.name}
+              class="w-16 h-16 rounded-full"
+            />
+            <div>
+              <h3 class="font-bold">{testimonial.name}</h3>
+              <p class="text-sm text-gray-500">{testimonial.role}</p>
+            </div>
+          </div>
+          <p class="text-base">{testimonial.testimonial}</p>
+        </div>
+      ))
+    }
+  </div>
+</div>

@@ -1,8 +1,11 @@
 ---
-const { text } = Astro.props;
+const { text, size } = Astro.props;
+
+const buttonSize =
+  size === "large" ? "text-xl py-3 px-6" : "text-base py-2 px-4";
 ---
 
 <button
-  class="bg-gradient-to-br from-sky-500 to-violet-500 text-white py-2 px-4 rounded-3xl hover:from-sky-600 hover:to-violet-600 transition-colors duration-300 w-fit font-semibold"
+  class={`bg-gradient-to-br from-sky-500 to-violet-500 text-white ${buttonSize} rounded-3xl hover:from-sky-600 hover:to-violet-600 transition-colors duration-300 w-fit font-semibold`}
   >{text}</button
 >
