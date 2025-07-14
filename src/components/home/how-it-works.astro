@@ -2,35 +2,45 @@
 import Button from "../../ui/button.astro";
 ---
 
-<div class="flex flex-col gap-8 justify-center items-center">
-  <ul class="steps">
-    <li class="step step-neutral">
-      <span class="step-icon">1</span><div class="mt-2">
-        <p class="font-bold">Consultation</p>
-        <p>
-          We discuss your needs and preferences to create a tailored solution.
-        </p>
-      </div>
-    </li>
-    <li class="step step-neutral">
-      <span class="step-icon">2</span><div class="mt-2">
-        <p class="font-bold">Installation</p>
-        <p>
-          Our team of experts will install your smart home devices with
-          precision.
-        </p>
-      </div>
-    </li>
-    <li class="step step-neutral">
-      <span class="step-icon">3</span><div class="mt-2">
-        <p class="font-bold">Follow-up</p>
-        <p>
-          We provide ongoing support and maintenance to ensure your
-          satisfaction.
-        </p>
-      </div>
-    </li>
-  </ul>
+<div class="bg-base-200/40 p-8 rounded-3xl">
+  <div class="text-center my-4">
+    <h2 class="text-5xl font-extrabold uppercase">How it works</h2>
+    <p class="text-lg">
+      Our process is designed to be simple and effective, ensuring you get the
+      best smart home experience.
+    </p>
+    <div class="flex flex-col gap-12 justify-center items-center mt-16">
+      <ul class="steps">
+        <li class="step step-neutral">
+          <span class="step-icon">1</span><div class="mt-2">
+            <p class="font-bold">Consultation</p>
+            <p>
+              We discuss your needs and preferences to create a tailored
+              solution.
+            </p>
+          </div>
+        </li>
+        <li class="step step-neutral">
+          <span class="step-icon">2</span><div class="mt-2">
+            <p class="font-bold">Installation</p>
+            <p>
+              Our team of experts will install your smart home devices with
+              precision.
+            </p>
+          </div>
+        </li>
+        <li class="step step-neutral">
+          <span class="step-icon">3</span><div class="mt-2">
+            <p class="font-bold">Follow-up</p>
+            <p>
+              We provide ongoing support and maintenance to ensure your
+              satisfaction.
+            </p>
+          </div>
+        </li>
+      </ul>
 
-  <Button text="Get free quote" size="large" />
+      <Button text="Get free quote" size="large" />
+    </div>
+  </div>
 </div>
