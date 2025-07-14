@@ -1,4 +1,6 @@
 ---
+import Image from "astro/components/Image.astro";
+import Logo from "../assets/logo.svg";
 import Button from "../ui/button.astro";
 ---
 
@@ -37,7 +39,7 @@ import Button from "../ui/button.astro";
         <li><a>Item 3</a></li>
       </ul>
     </div>
-    <a class="text-2xl font-extrabold">Azzams</a>
+    <Image src={Logo} alt="Azzams Logo" class="h-14 w-14" />
   </div>
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal px-1 font-semibold text-lg">

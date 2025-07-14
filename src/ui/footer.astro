@@ -1,12 +1,13 @@
 ---
-
+import Image from "astro/components/Image.astro";
+import Logo from "../assets/logo-light.svg";
 ---
 
 <footer
   class="footer sm:footer-horizontal bg-neutral text-neutral-content items-center p-4"
 >
   <aside class="flex flex-row justify-center items-center gap-4">
-    <p class="font-extrabold text-2xl">Azzams</p>
+    <Image src={Logo} alt="Azzams Logo" class="h-12 w-12" />
     <p>Copyright © {new Date().getFullYear()} - All right reserved</p>
   </aside>
   <nav class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
