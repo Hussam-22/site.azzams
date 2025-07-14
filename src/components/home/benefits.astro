@@ -1,7 +1,7 @@
 ---
 import Image from "astro/components/Image.astro";
+import AutomationIcon from "../../assets/icons/automation.svg";
 import HomeValueIcon from "../../assets/icons/home-value.svg";
-import HomeWifiIcon from "../../assets/icons/home-wifi.svg";
 import LightBulbIcon from "../../assets/icons/light-bulb.svg";
 import SecurityIcon from "../../assets/icons/security.svg";
 import PhoneImage from "../../assets/images/mobile-app-mock-1.JPG";
@@ -45,7 +45,7 @@ import PhoneMockup from "../../ui/phone-mockup.astro";
 
     <div class="w-5/12 flex flex-col gap-4">
       <div
-        class="bg-gradient-to-br from-black to-zinc-600 text-white p-6 rounded-xl h-2/3 relative overflow-hidden"
+        class="bg-black text-white p-6 rounded-xl h-2/3 relative overflow-hidden"
       >
         <p class="text-2xl font-bold">Enhanced Security</p>
         <p>
@@ -63,7 +63,11 @@ import PhoneMockup from "../../ui/phone-mockup.astro";
         >
           <p class="text-2xl font-bold">Automation and Scheduling</p>
           <div class="absolute -bottom-3 -right-3">
-            <Image src={HomeWifiIcon} alt="Home Value Icon" class="w-18 h-18" />
+            <Image
+              src={AutomationIcon}
+              alt="Home Value Icon"
+              class="w-18 h-18"
+            />
           </div>
         </div>
         <div
