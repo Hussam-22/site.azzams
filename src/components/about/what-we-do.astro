@@ -1,0 +1,44 @@
+---
+import Image from "astro/components/Image.astro";
+import OldLightSwitch from "../../assets/images/about/old-switch.png";
+import SmartLightSwitch from "../../assets/images/about/smart-switch.png";
+import Button from "../../ui/button.astro";
+---
+
+<div
+  class="grid grid-cols-2 gap-8 items-center px-8 py-16 bg-zinc-900 text-white rounded-xl"
+>
+  <div>
+    <h1 class="text-5xl font-extrabold uppercase">What We Do</h1>
+    <p class="text-lg mt-3 font-light mb-6">
+      Our goal at Azzams is to transform your traditional home into a smart
+      home, enhancing your living experience through innovative technology,
+      making it more convenient, efficient, and secure.
+    </p>
+
+    <Button text="Get free quote" size="large" />
+  </div>
+
+  <div>
+    <figure class="diff aspect-16/9" tabindex="0">
+      <div class="diff-item-1" role="img" tabindex="0">
+        <Image
+          src={SmartLightSwitch}
+          alt="Smart Light Switch"
+          class="aspect-16/9 bg-base-200/40 rounded-xl"
+        />
+      </div>
+      <div class="diff-item-2" role="img">
+        <Image
+          alt="Old Light Switch"
+          src={OldLightSwitch}
+          class="aspect-16/9 bg-base-200/40 rounded-xl grayscale-75"
+        />
+      </div>
+      <div class="diff-resizer"></div>
+    </figure>
+    <p class="mt-4 font-bold text-center">
+      Ditch the old light switch for a smart one!
+    </p>
+  </div>
+</div>

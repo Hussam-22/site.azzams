@@ -1,0 +1,55 @@
+---
+import Image from "astro/components/Image.astro";
+import TeamOne from "../../assets/images/team/team-1.jpg";
+import TeamTwo from "../../assets/images/team/team-2.jpg";
+import TeamThree from "../../assets/images/team/team-3.jpg";
+import TeamFour from "../../assets/images/team/team-4.jpg";
+
+const TEAM = [
+  {
+    name: "John Doe",
+    role: "Founder & CEO",
+    image: TeamOne,
+  },
+  {
+    name: "Jane Smith",
+    role: "Lead Engineer",
+    image: TeamTwo,
+  },
+  {
+    name: "Alice Johnson",
+    role: "Projects Manager",
+    image: TeamThree,
+  },
+  {
+    name: "Bob Brown",
+    role: "Smart Home Specialist",
+    image: TeamFour,
+  },
+];
+---
+
+<div>
+  <h1 class="text-5xl font-extrabold uppercase">Meet Our Team</h1>
+  <p class="text-lg mt-3 font-light mb-4">
+    Our team loves transforming traditional homes into smart homes, its all
+    about passion and innovation.
+  </p>
+  <div class="grid grid-cols-4 gap-6 mt-8">
+    {
+      TEAM.map((member) => (
+        <div class="flex flex-col justify-center items-center gap-2 mb-8">
+          <Image
+            src={member.image}
+            alt={member.name}
+            class="w-44 h-44 rounded-full object-cover"
+          />
+          <div class="text-center">
+            <h2 class="text-xl font-semibold">{member.name}</h2>
+            <p class="text-md">{member.role}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>

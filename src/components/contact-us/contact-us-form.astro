@@ -67,7 +67,12 @@ import Button from "../../ui/button.astro";
       Please enter your message.
     </div>
   </div>
-  <Button type="submit" text="Send Message" />
+  <button
+    type="submit"
+    class="bg-black text-white hover:bg-zinc-700 px-4 py-2 rounded-3xl transition-colors duration-300 w-fit font-semibold self-end"
+  >
+    Send Message
+  </button>
   <div id="result" class="mt-3 text-center"></div>
 </form>
 

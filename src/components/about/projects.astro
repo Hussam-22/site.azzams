@@ -1,0 +1,59 @@
+---
+import ProjectOne from "../../assets/images/projects/project-1.png";
+import ProjectTwo from "../../assets/images/projects/project-2.png";
+import ProjectThree from "../../assets/images/projects/project-3.png";
+import ProjectFour from "../../assets/images/projects/project-4.png";
+
+import Card from "../../ui/card.astro";
+
+const PROJECTS = [
+  {
+    title: "JUNVINSUITON Café Smart Lighting",
+    description:
+      "A complete smart lighting solution for ABC Café, enhancing ambiance and energy efficiency.",
+    image: ProjectOne,
+    badges: ["Smart lights", "Energy Efficiency"],
+  },
+  {
+    title: "Dubai Villa Thermostat Upgrade",
+    description:
+      "A comprehensive thermostat upgrade for a luxury villa in Dubai, optimizing climate control and energy usage.",
+    image: ProjectTwo,
+    badges: ["Smart thermostat", "Energy Efficiency"],
+  },
+  {
+    title: "Full Home Security Camera Installation",
+    description:
+      "A complete home security camera installation for enhanced safety and monitoring.",
+    image: ProjectThree,
+    badges: ["Security cameras", "Remote monitoring"],
+  },
+  {
+    title: "Smart Wifi Installation",
+    description:
+      "A complete smart wifi installation for seamless connectivity throughout the home.",
+    image: ProjectFour,
+    badges: ["Wifi", "Connectivity"],
+  },
+];
+---
+
+<div>
+  <h1 class="text-5xl font-extrabold uppercase">Recent Projects</h1>
+  <p class="text-lg mt-3 font-light">
+    Here are some of our recent projects that showcase our expertise in
+    transforming homes with smart technology.
+  </p>
+  <div class="grid grid-cols-4 mt-4 bg-base-200/40 p-4 rounded-lg gap-2">
+    {
+      PROJECTS.map((project) => (
+        <Card
+          title={project.title}
+          description={project.description}
+          image={project.image}
+          badges={project.badges}
+        />
+      ))
+    }
+  </div>
+</div>
