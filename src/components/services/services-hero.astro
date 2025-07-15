@@ -1,0 +1,26 @@
+---
+import Image from "astro/components/Image.astro";
+import HeroImage from "../../assets/images/services/service-man-1.png";
+---
+
+<div
+  class="bg-base-200/50 rounded-4xl px-8 flex items-center justify-between gap-8 py-8"
+>
+  <div class="w-6/12 flex flex-col gap-4">
+    <h1 class="text-7xl font-extrabold uppercase">
+      top-notch services, tailored for you
+    </h1>
+    <p class="text-lg">
+      No matter your needs, from simple to complex, our team is here to provide
+      the best solutions. We pride ourselves on delivering quality results that
+      exceed expectations.
+    </p>
+  </div>
+  <div class="w-6/12 relative">
+    <Image
+      src={HeroImage}
+      alt="Hero Image"
+      class="h-full w-full object-cover rounded-4xl"
+    />
+  </div>
+</div>
