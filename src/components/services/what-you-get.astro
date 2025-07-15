@@ -24,10 +24,10 @@ const WHAT_YOU_GET = [
 <div>
   <h2 class="text-5xl font-extrabold uppercase">What you get</h2>
   <p class="text-lg">All our services come with:</p>
-  <div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
     {
       WHAT_YOU_GET.map((item) => (
-        <div class="mb-6">
+        <div class="bg-base-200/40 p-4 rounded-4xl">
           <h3 class="text-2xl font-bold">{item.title}</h3>
           <p class="text-base">{item.description}</p>
         </div>

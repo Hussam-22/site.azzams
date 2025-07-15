@@ -4,7 +4,7 @@ import Image from "astro/components/Image.astro";
 const { title, description, image, badges } = Astro.props;
 ---
 
-<div class="card bg-base-100 w-full">
+<div class="bg-base-100 w-full rounded-4xl">
   <figure>
     <Image
       src={image}
@@ -12,7 +12,7 @@ const { title, description, image, badges } = Astro.props;
       class="w-full h-96 object-cover rounded-t-4xl"
     />
   </figure>
-  <div class="p-2 flex flex-col gap-2">
+  <div class="py-2 flex flex-col gap-2 px-4">
     <h2 class="font-bold">{title}</h2>
     <p class="font-light text-sm">{description}</p>
     <div class="flex flex-wrap gap-2">
