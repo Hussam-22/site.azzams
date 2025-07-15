@@ -5,20 +5,20 @@ const { className, imgSrc, text } = Astro.props;
 ---
 
 <div class={className}>
-  <div class="relative w-52 overflow-visible rounded-3xl bg-black p-2">
+  <div class="relative w-52 overflow-visible rounded-4xl bg-black p-2">
     <!-- Side Buttons -->
     <div
-      class="absolute top-20 h-12 w-2 rounded-xl bg-black"
+      class="absolute top-20 h-12 w-2 rounded-4xl bg-black"
       style="right: -3px;"
     >
     </div>
     <div
-      class="absolute top-20 h-12 w-2 rounded-xl bg-black"
+      class="absolute top-20 h-12 w-2 rounded-4xl bg-black"
       style="left: -3px;"
     >
     </div>
     <div
-      class="absolute top-36 h-12 w-2 rounded-xl bg-black"
+      class="absolute top-36 h-12 w-2 rounded-4xl bg-black"
       style="left: -3px;"
     >
     </div>
@@ -32,7 +32,7 @@ const { className, imgSrc, text } = Astro.props;
     <!-- Image -->
     <Image
       src={imgSrc}
-      class="h-full w-full rounded-3xl object-contain"
+      class="h-full w-full rounded-4xl object-contain"
       alt={text || "phone mockup"}
       loading="lazy"
       quality="max"
