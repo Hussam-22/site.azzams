@@ -1,22 +1,31 @@
 ---
+import Image from "astro/components/Image.astro";
+import ExpertIcon from "../../assets/icons/expert.svg";
+import PremiumIcon from "../../assets/icons/premium.svg";
+import TailoredIcon from "../../assets/icons/puzzle.svg";
+import SupportIcon from "../../assets/icons/support.svg";
+
 const WHAT_YOU_GET = [
   {
     title: "Premium Products",
     description: "Access to the latest and most reliable smart home devices.",
-    icon: "",
+    icon: PremiumIcon,
   },
   {
     title: "Expert Consultation",
     description: "Personalized advice to understand your unique needs.",
+    icon: ExpertIcon,
   },
   {
     title: "Tailored Solutions",
     description:
       "Custom strategies designed to meet your specific requirements.",
+    icon: TailoredIcon,
   },
   {
     title: "Ongoing Support",
     description: "Continuous assistance to ensure your success.",
+    icon: SupportIcon,
   },
 ];
 ---
@@ -28,6 +37,7 @@ const WHAT_YOU_GET = [
     {
       WHAT_YOU_GET.map((item) => (
         <div class="bg-base-200/40 p-4 rounded-4xl">
+          <Image src={item.icon} alt={item.title} class="w-12 h-12 mb-4" />
           <h3 class="text-2xl font-bold">{item.title}</h3>
           <p class="text-base">{item.description}</p>
         </div>

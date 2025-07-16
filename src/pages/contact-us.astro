@@ -1,22 +1,52 @@
 ---
 import Image from "astro/components/Image.astro";
+import mailIcon from "../assets/icons/email.svg";
+import phoneIcon from "../assets/icons/phone.svg";
+import whatsappIcon from "../assets/icons/whatsapp-white.svg";
 import contactUsImage from "../assets/images/contact-us-img-1.png";
-import ContactUsForm from "../components/contact-us/contact-us-form.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
   <div
-    class="bg-base-200/50 rounded-4xl px-8 flex items-center justify-between gap-8 py-8"
+    class="bg-base-200/50 rounded-4xl p-4 flex items-center justify-between gap-8"
   >
     <div class="flex flex-row gap-12 items-center justify-center">
-      <div class="w-6/12 flex flex-col justify-center text-center gap-4">
+      <div class="w-6/12 flex flex-col justify-center text-center gap-4 pl-4">
         <h1 class="text-5xl font-extrabold uppercase">Lets Talk</h1>
-        <p class="text-lg">
-          We are here to help you make your house smarter. Please fill out the
-          form below and we will get back to you as soon as possible.
-        </p>
-        <ContactUsForm />
+
+        <div
+          class="flex flex-col gap-2 text-lg justify-start items-start bg-white p-4 rounded-4xl"
+        >
+          <div class="flex items-center gap-1">
+            <Image
+              src={mailIcon}
+              alt="Mail Icon"
+              class="h-6 w-6 bg-black rounded-full p-1"
+            />
+            <a href="mailto:info@azzams.com">info@azzams.com</a>
+          </div>
+          <div class="flex items-center gap-1">
+            <Image
+              src={phoneIcon}
+              alt="Phone Icon"
+              class="h-6 w-6 bg-black rounded-full p-1"
+            />
+            <a href="tel:+97145989049">+971 459 89049</a>
+          </div>
+          <div class="flex items-center gap-1">
+            <Image
+              src={whatsappIcon}
+              alt="WhatsApp Icon"
+              class="h-6 w-6 bg-black rounded-full p-1"
+            />
+            <a href="https://wa.me/97156522317">+971 565 22317</a>
+          </div>
+          <p class="text-sm">Dubai Invesment Park Second, 104-0 Office 1-83</p>
+          <p class="text-sm">
+            Mohammed Azzam Alkhodhri Computer Systems Housing Services
+          </p>
+        </div>
       </div>
       <div class="w-6/12">
         <Image

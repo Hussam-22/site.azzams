@@ -1,0 +1,76 @@
+---
+import Image from "astro/components/Image.astro";
+import accessControlImage from "../../assets/images/services/access-control.webp";
+import cctvSystemsImage from "../../assets/images/services/cctv-system.webp";
+import gateControlImage from "../../assets/images/services/gate-control.webp";
+import homeAutomationImage from "../../assets/images/services/home-automation.webp";
+import intercomSystemsImage from "../../assets/images/services/intercom-system.webp";
+import wifiSystemsImage from "../../assets/images/services/wifi-system.webp";
+
+const SERVICES = [
+  {
+    title: "Home Automation",
+    description:
+      "Powered by ABB, enabling full control of lighting, climate, curtains, and more from your phone or voice assistant.",
+    image: homeAutomationImage,
+  },
+  {
+    title: "Gate Control",
+    description:
+      "Automated and remote-controlled gate solutions tailored for your property.",
+    image: gateControlImage,
+  },
+  {
+    title: "CCTV Systems",
+    description:
+      "High-definition Hikvision cameras for comprehensive indoor and outdoor surveillance.",
+    image: cctvSystemsImage,
+  },
+  {
+    title: "Intercom Systems",
+    description:
+      "Seamless communication across rooms or entry points with reliable intercom solutions.",
+    image: intercomSystemsImage,
+  },
+  {
+    title: "Access Control",
+    description:
+      "Secure and smart access systems designed to protect your home or business.",
+    image: accessControlImage,
+  },
+  {
+    title: "WiFi Systems",
+    description:
+      "Enterprise-grade UniFi network installations to ensure reliable, fast connectivity throughout your home or business.",
+    image: wifiSystemsImage,
+  },
+];
+---
+
+<div>
+  <h2 class="text-5xl font-extrabold uppercase">Our Services</h2>
+  <p class="text-lg">
+    Explore our range of services designed to elevate your experience.
+  </p>
+  <div class="mt-6 grid grid-cols-2 gap-4">
+    {
+      SERVICES.map((service) => (
+        <div class="bg-base-200/40 flex flex-row gap-4 h-44 rounded-4xl p-2">
+          <Image
+            src={service.image}
+            alt={`Image for ${service.title}`}
+            class="h-full object-cover rounded-3xl w-4/12"
+          />
+          <div class="w-8/12 p-4">
+            <p class="text-xl font-bold">{service.title}</p>
+            <p class="text-sm font-light">
+              {service.description}
+              facilis! Molestias, saepe odit dolorum eius assumenda minima!
+              Eligendi, soluta alias!
+            </p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>
