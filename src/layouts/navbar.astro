@@ -2,19 +2,87 @@
 import Image from "astro/components/Image.astro";
 import Logo from "../assets/logo.svg";
 import Button from "../ui/button.astro";
+
+const url = Astro.url.pathname;
+
+const MENU_ITEMS = [
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Services", href: "/services" },
+  { name: "Contact", href: "/contact-us" },
+];
 ---
 
-<div
-  class="backdrop-blur-xl bg-base-200/40 fixed left-1/2 transform -translate-x-1/2 top-3 z-50 px-4 flex flex-row items-center justify-between h-16 rounded-4xl w-[calc(100%-2rem)] lg:w-6/12 sm:mx-0"
->
-  <div class="flex flex-row items-center gap-2 justify-between w-full">
+<div class="drawer drawer-end">
+  <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
+  <div
+    class="backdrop-blur-xl bg-base-200/40 fixed left-1/2 transform -translate-x-1/2 top-3 z-20 px-4 flex flex-row items-center justify-between h-16 rounded-4xl w-[calc(100%-2rem)] lg:w-6/12 sm:mx-0"
+  >
     <Image src={Logo} alt="Azzams Logo" class="h-14 w-14" />
-    <div class="flex flex-row gap-4 sm:gap-6 px-1 font-semibold text-md">
-      <a href="/" class="hover:text-sky-500 active:text-sky-600">Home</a>
-      <a href="/about">About</a>
-      <a href="/services">Services</a>
-      <a href="/contact-us">Contact</a>
+    <Button text="Get free quote" className="sm:hidden" />
+    <div class="lg:hidden">
+      <label
+        for="my-drawer-3"
+        aria-label="open sidebar"
+        class="btn btn-square btn-ghost"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          class="inline-block h-6 w-6 stroke-current"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </label>
     </div>
-    <Button text="Get free quote" />
+
+    <div
+      class="flex-row gap-4 sm:gap-6 px-1 font-semibold text-md hidden sm:flex"
+    >
+      {
+        MENU_ITEMS.map((item) => (
+          <a
+            id={item.name}
+            href={item.href}
+            class={`hover:text-sky-500 active:text-sky-600 transition-colors duration-300 ${
+              url === item.href ? "text-sky-500" : ""
+            }`}
+          >
+            {item.name}
+          </a>
+        ))
+      }
+    </div>
+    <Button text="Get free quote" className="hidden sm:block" />
+  </div>
+  <div class="drawer-side z-50">
+    <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"
+    ></label>
+    <div class="menu bg-base-100 min-h-full w-64 p-4 rounded-l-4xl">
+      <div class="flex flex-col gap-4 w-full h-full">
+        <Image src={Logo} alt="Azzams Logo" class="h-14 w-14" />
+        <div class="flex-col gap-2 px-2 font-bold text-2xl flex">
+          {
+            MENU_ITEMS.map((item) => (
+              <a
+                id={item.name}
+                href={item.href}
+                class={`hover:text-sky-500 active:text-sky-600 transition-colors duration-300 ${
+                  url === item.href ? "text-sky-500" : ""
+                }`}
+              >
+                {item.name}
+              </a>
+            ))
+          }
+        </div>
+        <Button text="Get free quote" size="large" />
+      </div>
+    </div>
   </div>
 </div>
