@@ -1,16 +1,19 @@
 ---
 import Button from "../../ui/button.astro";
+import SectionHead from "../../ui/section-head.astro";
 ---
 
 <div class="">
   <div class="text-center my-4">
-    <h2 class="text-5xl font-extrabold uppercase">How it works</h2>
-    <p class="text-lg">
-      Our process is designed to be simple and effective, ensuring you get the
-      best smart home experience.
-    </p>
+    <SectionHead
+      title="How it works"
+      description="Our process is designed to be simple and effective, ensuring you get the best smart home experience."
+    />
+
     <div class="flex flex-col gap-12 justify-center items-center mt-16">
-      <ul class="steps">
+      <ul
+        class="steps steps-vertical sm:steps-horizontal w-full bg-base-200/40 rounded-4xl p-4"
+      >
         <li class="step step-neutral">
           <span class="step-icon">1</span><div class="mt-2">
             <p class="font-bold">Consultation</p>

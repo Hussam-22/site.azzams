@@ -6,11 +6,15 @@ import LightBulbIcon from "../../assets/icons/light-bulb.svg";
 import SecurityIcon from "../../assets/icons/security.svg";
 import PhoneImage from "../../assets/images/mobile-app-mock.jpg";
 import PhoneMockup from "../../ui/phone-mockup.astro";
+import SectionHead from "../../ui/section-head.astro";
 ---
 
-<div class="">
-  <h2 class="text-5xl font-extrabold uppercase">Benefits</h2>
-  <p class="text-lg">Discover the advantages of our smart home solutions.</p>
+<div class="hidden sm:block">
+  <SectionHead
+    title="Benefits"
+    description="Discover the advantages of our smart home solutions."
+  />
+
   <div class="h-96 flex flex-row gap-2 font-light mt-8">
     <div class="bg-base-200/40 p-6 rounded-4xl h-full w-3/12 overflow-hidden">
       <p class="text-2xl font-bold">Convenience</p>
@@ -84,6 +88,76 @@ import PhoneMockup from "../../ui/phone-mockup.astro";
             />
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="block sm:hidden">
+  <SectionHead
+    title="Benefits"
+    description="Discover the advantages of our smart home solutions."
+  />
+
+  <div class="grid grid-cols-1 gap-6 font-light mt-8">
+    <div class="bg-base-200/40 p-6 rounded-4xl h-72 w-full overflow-hidden">
+      <p class="text-2xl font-bold">Convenience</p>
+      <p>
+        Control lights, thermostats, locks, and appliances from only one sleek
+        control panel.
+      </p>
+      <div class="flex justify-center mt-2">
+        <PhoneMockup imgSrc={PhoneImage} />
+      </div>
+    </div>
+
+    <div class="p-6 rounded-4xl h-full relative bg-base-200/40">
+      <p class="text-2xl font-bold">Remote Access</p>
+      <p>
+        Managing your home from anywhere—set the AC before you arrive, check
+        door locks, and switch off appliances remotely.
+      </p>
+    </div>
+
+    <div class="p-6 rounded-4xl h-full overflow-hidden relative bg-base-200/40">
+      <p class="text-2xl font-bold">Energy Efficiency</p>
+      <p class="w-[calc(100%-2rem)]">
+        Advanced automation reduces energy waste by intelligently managing
+        lighting, climate, and appliances in real time.
+      </p>
+      <div class="absolute -bottom-8 -right-8">
+        <Image src={LightBulbIcon} alt="Light Bulb Icon" class="w-28 h-28" />
+      </div>
+    </div>
+    <div class="grid grid-cols-2 gap-4">
+      <div
+        class="bg-base-200/40 p-6 rounded-4xl w-full relative overflow-hidden"
+      >
+        <p class="text-xl font-bold">Automation and Scheduling</p>
+        <div class="absolute -bottom-3 -right-3">
+          <Image src={AutomationIcon} alt="Home Value Icon" class="w-18 h-18" />
+        </div>
+      </div>
+
+      <div
+        class="bg-base-200/40 p-6 rounded-4xl w-full relative overflow-hidden"
+      >
+        <p class="text-xl font-bold">Increased Home Value</p>
+        <div class="absolute -bottom-3 -right-3">
+          <Image src={HomeValueIcon} alt="Home Value Icon" class="w-18 h-18" />
+        </div>
+      </div>
+    </div>
+    <div
+      class="bg-black text-white p-6 rounded-4xl h-full relative overflow-hidden"
+    >
+      <p class="text-2xl font-bold">Enhanced Security</p>
+      <p class="w-[calc(100%-2rem)]">
+        Smart security systems provide real-time monitoring, instant alerts, and
+        remote access—keeping your home protected 24/7
+      </p>
+      <div class="absolute -bottom-8 -right-8">
+        <Image src={SecurityIcon} alt="Light Bulb Icon" class="w-28 h-28" />
       </div>
     </div>
   </div>

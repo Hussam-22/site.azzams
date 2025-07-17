@@ -5,6 +5,7 @@ import sitemap from "@astrojs/sitemap";
 
 import react from "@astrojs/react";
 import tailwindcss from "@tailwindcss/vite";
+import robotsTxt from "astro-robots-txt";
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,5 +13,5 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  integrations: [sitemap(), react()],
+  integrations: [sitemap(), react(), robotsTxt()],
 });

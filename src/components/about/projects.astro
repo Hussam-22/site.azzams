@@ -5,6 +5,7 @@ import ProjectThree from "../../assets/images/projects/project-3.png";
 import ProjectFour from "../../assets/images/projects/project-4.png";
 
 import Card from "../../ui/card.astro";
+import SectionHead from "../../ui/section-head.astro";
 
 const PROJECTS = [
   {
@@ -39,11 +40,11 @@ const PROJECTS = [
 ---
 
 <div>
-  <h1 class="text-5xl font-extrabold uppercase">Recent Projects</h1>
-  <p class="text-lg mt-3 font-light">
-    Here are some of our recent projects that showcase our expertise in
-    transforming homes with smart technology.
-  </p>
+  <SectionHead
+    title="Recent Projects"
+    description="Here are some of our recent projects that showcase our expertise in transforming homes with smart technology."
+  />
+
   <div class="grid grid-cols-4 mt-4 bg-base-200/40 p-2 rounded-4xl gap-2">
     {
       PROJECTS.map((project) => (

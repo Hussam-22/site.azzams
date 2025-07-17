@@ -6,6 +6,7 @@ import Avatar3 from "../../assets/avatars/avatar-3.svg";
 import Avatar4 from "../../assets/avatars/avatar-4.svg";
 import Avatar5 from "../../assets/avatars/avatar-5.svg";
 import Avatar6 from "../../assets/avatars/avatar-6.svg";
+import SectionHead from "../../ui/section-head.astro";
 
 const testimonials = [
   {
@@ -70,8 +71,8 @@ const testimonials = [
 ];
 ---
 
-<div class="flex flex-col gap-8">
-  <h2 class="text-5xl font-extrabold uppercase">Testimonials</h2>
+<div class="flex-col gap-8 hidden sm:flex">
+  <SectionHead title="Testimonials" />
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     {
       testimonials.map((testimonial) => (
@@ -88,6 +89,31 @@ const testimonials = [
             </div>
           </div>
           <p class="text-base">{testimonial.testimonial}</p>
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<div class="sm:hidden">
+  <SectionHead title="Testimonials" />
+  <div class="carousel carousel-center w-full max-w-md space-x-4 mt-8">
+    {
+      testimonials.map((testimonial, index) => (
+        <div
+          class="carousel-item w-[90%] bg-base-100 border-2 border-black rounded-3xl"
+          id={`${index}`}
+        >
+          <div class="flex flex-col items-start gap-1 p-4 max-w-[calc(100%-8rem)]">
+            <Image
+              src={testimonial.image}
+              alt={testimonial.name}
+              class="w-16 h-16 rounded-full"
+            />
+            <h3 class="font-bold">{testimonial.name}</h3>
+            <p class="text-sm text-gray-500">{testimonial.role}</p>
+            <p class="text-base">{testimonial.testimonial}</p>
+          </div>
         </div>
       ))
     }

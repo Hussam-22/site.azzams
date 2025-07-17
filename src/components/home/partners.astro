@@ -8,16 +8,16 @@ import jbl from "../../assets/images/logos/jbl.png";
 import panasonic from "../../assets/images/logos/panasonic.svg";
 import ubiquiti from "../../assets/images/logos/ubiquiti.png";
 import zkteco from "../../assets/images/logos/zkteco.png";
+import SectionHead from "../../ui/section-head.astro";
 ---
 
 <div>
-  <h2 class="text-5xl font-extrabold uppercase">Our Partners</h2>
-  <p class="text-lg">
-    We collaborate with industry-leading brands to deliver the best smart home
-    solutions.
-  </p>
+  <SectionHead
+    title="Our Partners"
+    description="We collaborate with industry-leading brands to deliver the best smart home solutions."
+  />
 
-  <div class="grid grid-cols-4 gap-4 mt-8 justify-items-center">
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 justify-items-center">
     <Image
       src={abb}
       alt="ABB"

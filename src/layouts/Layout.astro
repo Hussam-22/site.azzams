@@ -1,19 +1,33 @@
 ---
+import { SEO } from "astro-seo";
 import { ClientRouter } from "astro:transitions";
 import "../assets/app.css";
 import Container from "../ui/container.astro";
 import Footer from "../ui/footer.astro";
 import Navbar from "./navbar.astro";
+
+const { title = "Azzams Smart Home Technology" } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
+    <SEO
+      title={title}
+      description="Smart Home Technology for Modern Lifestyle"
+      openGraph={{
+        basic: {
+          title,
+          type: "A type.",
+          image:
+            "https://user-images.githubusercontent.com/5182256/131216951-8f74f425-f775-463d-a11b-0e01ad9fce8d.png",
+        },
+      }}
+    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -30,6 +44,7 @@ import Navbar from "./navbar.astro";
     <Footer />
   </body><script
     defer
+    is:inline
     src="https://unpkg.com/tailwindcss-intersect@2.x.x/dist/observer.min.js"
   ></script>
 </html>

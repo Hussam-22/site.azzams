@@ -4,6 +4,7 @@ import TeamOne from "../../assets/images/team/team-1.jpg";
 import TeamTwo from "../../assets/images/team/team-2.jpg";
 import TeamThree from "../../assets/images/team/team-3.jpg";
 import TeamFour from "../../assets/images/team/team-4.jpg";
+import SectionHead from "../../ui/section-head.astro";
 
 const TEAM = [
   {
@@ -31,11 +32,10 @@ const TEAM = [
 ---
 
 <div>
-  <h1 class="text-5xl font-extrabold uppercase">Meet Our Team</h1>
-  <p class="text-lg mt-3 font-light mb-4">
-    Our team loves transforming traditional homes into smart homes, its all
-    about passion and innovation.
-  </p>
+  <SectionHead
+    title="Meet Our Team"
+    description="Our team loves transforming traditional homes into smart homes, its all about passion and innovation."
+  />
   <div class="grid grid-cols-4 mt-8 gap-4">
     {
       TEAM.map((member) => (

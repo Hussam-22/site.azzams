@@ -6,6 +6,7 @@ import GateControlIcon from "../../assets/icons/gate-access.svg";
 import AutomationIcon from "../../assets/icons/home-auto.svg";
 import IntercomIcon from "../../assets/icons/intercom.svg";
 import WifiIcon from "../../assets/icons/wifi.svg";
+import SectionHead from "../../ui/section-head.astro";
 
 const SERVICES = [
   {
@@ -42,13 +43,12 @@ const SERVICES = [
 ---
 
 <div>
-  <h2 class="text-5xl font-extrabold uppercase">Services</h2>
-  <p class="text-lg">
-    Discover our range of smart home services designed to optimize your business
-    operations.
-  </p>
+  <SectionHead
+    title="Services"
+    description="Discover our range of smart home services designed to optimize your business operations."
+  />
 
-  <div class="grid grid-cols-3 gap-4 mt-8 h-full">
+  <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-8 h-full">
     {
       SERVICES.map((service) => (
         <div class="bg-base-200/40 rounded-4xl p-4">

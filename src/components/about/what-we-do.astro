@@ -3,23 +3,19 @@ import Image from "astro/components/Image.astro";
 import OldLightSwitch from "../../assets/images/about/old-switch.png";
 import SmartLightSwitch from "../../assets/images/about/smart-switch.png";
 import Button from "../../ui/button.astro";
+import SectionHead from "../../ui/section-head.astro";
 ---
 
 <div
   class="grid grid-cols-2 gap-8 items-center px-8 py-16 bg-zinc-900 text-white rounded-4xl"
 >
   <div>
-    <h1 class="text-5xl font-extrabold uppercase">What We Do</h1>
-    <p class="text-lg mt-3 font-light mb-6">
-      Our Goal is to become the leading provider of premium smart home and
-      business solutions in the UAE, delivering bespoke automation, security,
-      and networking systems that redefine modern living. Our target is to
-      integrate advanced technologies into over 1,000 homes and commercial
-      spaces by 2027, setting a new standard for comfort, safety, and
-      sophistication.
-    </p>
+    <SectionHead
+      title="What We Do"
+      description="Our Goal is to become the leading provider of premium smart home and business solutions in the UAE, delivering bespoke automation, security, and networking systems that redefine modern living. Our target is to integrate advanced technologies into over 1,000 homes and commercial spaces by 2027, setting a new standard for comfort, safety, and sophistication."
+    />
 
-    <Button text="Get free quote" size="large" />
+    <Button text="Get free quote" size="large" className="mt-4" />
   </div>
 
   <div>
