@@ -1,85 +1,124 @@
 ---
 import Image from "astro/components/Image.astro";
-import mailIcon from "../assets/icons/email.svg";
-import phoneIcon from "../assets/icons/phone.svg";
-import whatsappIcon from "../assets/icons/whatsapp-white.svg";
 import Logo from "../assets/logo-light.svg";
+import { MENU_ITEMS } from "../data/menu-items";
+import SvgColor from "./svg-color.astro";
 ---
 
-<footer
-  class="footer bg-black text-white px-10 py-2 flex flex-col sm:flex-row justify-between items-center"
->
-  <aside class="flex flex-row gap-4 items-center">
-    <Image src={Logo} alt="Azzams Logo" class="h-12 w-12" />
-    <p class="font-light">
-      <span class="font-bold">Azzams</span> Your partner in smart home solutions.
-    </p>
-    <nav>
-      <div class="grid grid-flow-col gap-4">
-        <a
-          href="https://www.linkedin.com/company/azzams/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            ><path
-              fill="currentColor"
-              d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"
-            ></path></svg
-          >
-        </a>
-        <a
-          href="https://youtube.com/@azzamsco?si=1l4pXgsddhqZkWvv"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            ><path
-              fill="currentColor"
-              d="m11.7 3.6l.365-.002l.653.004c.872.006 2.46.026 4.06.086l.257.01c1.8.071 3.57.195 4.36.409c.509.138.972.406 1.35.778c.373.372.641.836.779 1.34c.793 3.19.61 8.23.015 11.5c-.138.508-.406.972-.779 1.34s-.836.64-1.35.778c-1.75.477-8.48.506-9.28.508l-.807-.004c-.817-.006-2.22-.024-3.68-.074l-.465-.017l-.444-.018c-1.69-.073-3.3-.195-4.04-.396a3.02 3.02 0 0 1-2.129-2.118c-.797-3.18-.579-8.22-.015-11.5a3.02 3.02 0 0 1 2.129-2.119c1.63-.444 7.56-.51 9.03-.522zM9.04 8v8l7-4z"
-            ></path></svg
-          >
-        </a>
-        <a
-          href="https://www.instagram.com/azzams.co?igsh=MXFiM3N2MW5mcjQzaQ=="
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            ><path
-              fill="currentColor"
-              d="M7.03.084c-1.277.06-2.149.264-2.91.563a5.9 5.9 0 0 0-2.124 1.388a5.9 5.9 0 0 0-1.38 2.127C.321 4.926.12 5.8.064 7.076s-.069 1.688-.063 4.947s.021 3.667.083 4.947c.061 1.277.264 2.149.563 2.911c.308.789.72 1.457 1.388 2.123a5.9 5.9 0 0 0 2.129 1.38c.763.295 1.636.496 2.913.552c1.278.056 1.689.069 4.947.063s3.668-.021 4.947-.082c1.28-.06 2.147-.265 2.91-.563a5.9 5.9 0 0 0 2.123-1.388a5.9 5.9 0 0 0 1.38-2.129c.295-.763.496-1.636.551-2.912c.056-1.28.07-1.69.063-4.948c-.006-3.258-.02-3.667-.081-4.947c-.06-1.28-.264-2.148-.564-2.911a5.9 5.9 0 0 0-1.387-2.123a5.9 5.9 0 0 0-2.128-1.38c-.764-.294-1.636-.496-2.914-.55C15.647.009 15.236-.006 11.977 0S8.31.021 7.03.084m.14 21.693c-1.17-.05-1.805-.245-2.228-.408a3.7 3.7 0 0 1-1.382-.895a3.7 3.7 0 0 1-.9-1.378c-.165-.423-.363-1.058-.417-2.228c-.06-1.264-.072-1.644-.08-4.848c-.006-3.204.006-3.583.061-4.848c.05-1.169.246-1.805.408-2.228c.216-.561.477-.96.895-1.382a3.7 3.7 0 0 1 1.379-.9c.423-.165 1.057-.361 2.227-.417c1.265-.06 1.644-.072 4.848-.08c3.203-.006 3.583.006 4.85.062c1.168.05 1.804.244 2.227.408c.56.216.96.475 1.382.895s.681.817.9 1.378c.165.422.362 1.056.417 2.227c.06 1.265.074 1.645.08 4.848c.005 3.203-.006 3.583-.061 4.848c-.051 1.17-.245 1.805-.408 2.23c-.216.56-.477.96-.896 1.38a3.7 3.7 0 0 1-1.378.9c-.422.165-1.058.362-2.226.418c-1.266.06-1.645.072-4.85.079s-3.582-.006-4.848-.06m9.783-16.192a1.44 1.44 0 1 0 1.437-1.442a1.44 1.44 0 0 0-1.437 1.442M5.839 12.012a6.161 6.161 0 1 0 12.323-.024a6.162 6.162 0 0 0-12.323.024M8 12.008A4 4 0 1 1 12.008 16A4 4 0 0 1 8 12.008"
-            ></path></svg
-          >
-        </a>
+<footer class="w-full h-14">
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-black py-4">
+    <!-- column 1 -->
+    <div
+      class="flex flex-col gap-2 bg-black text-white px-4 items-center justify-center text-center"
+    >
+      <Image src={Logo} alt="Azzams Logo" class="h-12 w-12" />
+      <p>
+        Delivering advanced automation, security, and networking systems
+        tailored to your needs.
+      </p>
+      <p class="hidden sm:block text-xs text-zinc-300">
+        All rights reserved &copy; {new Date().getFullYear()} Azzams
+      </p>
+    </div>
+    <!-- column 2 -->
+    <div class="grid grid-cols-2 gap-4">
+      <div class="flex flex-col gap-2 items-center justify-center text-center">
+        <p class="font-bold text-zinc-500">Quick Links</p>
+        {
+          MENU_ITEMS.map((item) => (
+            <a
+              id={item.name}
+              href={item.href}
+              class={`hover:text-sky-500  text-white transition-colors duration-300 `}
+            >
+              {item.name}
+            </a>
+          ))
+        }
       </div>
-    </nav>
-  </aside>
-  <p>All rights reserved &copy; {new Date().getFullYear()} Azzams</p>
-  <div class="flex flex-row gap-4">
-    <div class="flex items-center gap-1">
-      <Image src={mailIcon} alt="Mail Icon" class="h-5 w-5" />
-      <a href="mailto:info@azzams.com">info@azzams.com</a>
+      <!-- contact information -->
+      <div class="flex flex-col gap-2 text-white">
+        <p class="font-bold text-zinc-500">Contact Information</p>
+        <div class="flex items-center gap-1">
+          <SvgColor
+            iconPath="src/assets/icons/email.svg"
+            alt="Mail Icon"
+            className="text-white"
+          />
+          <a href="mailto:info@azzams.com">info@azzams.com</a>
+        </div>
+        <div class="flex items-center gap-1">
+          <SvgColor
+            iconPath="src/assets/icons/phone.svg"
+            alt="Phone Icon"
+            className="text-white"
+          />
+          <a href="tel:+97145989049">+971 459 89049</a>
+        </div>
+        <div class="flex items-center gap-1">
+          <SvgColor
+            iconPath="src/assets/icons/whatsapp-white.svg"
+            alt="WhatsApp Icon"
+            className="text-white"
+          />
+          <a href="https://wa.me/97156522317">+971 565 22317</a>
+        </div>
+        <nav>
+          <div class="flex flex-row gap-4 mt-2">
+            <a
+              href="https://www.linkedin.com/company/azzams/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                ><path
+                  fill="#FFFFFF"
+                  d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"
+                ></path></svg
+              >
+            </a>
+            <a
+              href="https://youtube.com/@azzamsco?si=1l4pXgsddhqZkWvv"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                ><path
+                  fill="#FFFFFF"
+                  d="m11.7 3.6l.365-.002l.653.004c.872.006 2.46.026 4.06.086l.257.01c1.8.071 3.57.195 4.36.409c.509.138.972.406 1.35.778c.373.372.641.836.779 1.34c.793 3.19.61 8.23.015 11.5c-.138.508-.406.972-.779 1.34s-.836.64-1.35.778c-1.75.477-8.48.506-9.28.508l-.807-.004c-.817-.006-2.22-.024-3.68-.074l-.465-.017l-.444-.018c-1.69-.073-3.3-.195-4.04-.396a3.02 3.02 0 0 1-2.129-2.118c-.797-3.18-.579-8.22-.015-11.5a3.02 3.02 0 0 1 2.129-2.119c1.63-.444 7.56-.51 9.03-.522zM9.04 8v8l7-4z"
+                ></path></svg
+              >
+            </a>
+            <a
+              href="https://www.instagram.com/azzams.co?igsh=MXFiM3N2MW5mcjQzaQ=="
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                ><path
+                  fill="#FFFFFF"
+                  d="M7.03.084c-1.277.06-2.149.264-2.91.563a5.9 5.9 0 0 0-2.124 1.388a5.9 5.9 0 0 0-1.38 2.127C.321 4.926.12 5.8.064 7.076s-.069 1.688-.063 4.947s.021 3.667.083 4.947c.061 1.277.264 2.149.563 2.911c.308.789.72 1.457 1.388 2.123a5.9 5.9 0 0 0 2.129 1.38c.763.295 1.636.496 2.913.552c1.278.056 1.689.069 4.947.063s3.668-.021 4.947-.082c1.28-.06 2.147-.265 2.91-.563a5.9 5.9 0 0 0 2.123-1.388a5.9 5.9 0 0 0 1.38-2.129c.295-.763.496-1.636.551-2.912c.056-1.28.07-1.69.063-4.948c-.006-3.258-.02-3.667-.081-4.947c-.06-1.28-.264-2.148-.564-2.911a5.9 5.9 0 0 0-1.387-2.123a5.9 5.9 0 0 0-2.128-1.38c-.764-.294-1.636-.496-2.914-.55C15.647.009 15.236-.006 11.977 0S8.31.021 7.03.084m.14 21.693c-1.17-.05-1.805-.245-2.228-.408a3.7 3.7 0 0 1-1.382-.895a3.7 3.7 0 0 1-.9-1.378c-.165-.423-.363-1.058-.417-2.228c-.06-1.264-.072-1.644-.08-4.848c-.006-3.204.006-3.583.061-4.848c.05-1.169.246-1.805.408-2.228c.216-.561.477-.96.895-1.382a3.7 3.7 0 0 1 1.379-.9c.423-.165 1.057-.361 2.227-.417c1.265-.06 1.644-.072 4.848-.08c3.203-.006 3.583.006 4.85.062c1.168.05 1.804.244 2.227.408c.56.216.96.475 1.382.895s.681.817.9 1.378c.165.422.362 1.056.417 2.227c.06 1.265.074 1.645.08 4.848c.005 3.203-.006 3.583-.061 4.848c-.051 1.17-.245 1.805-.408 2.23c-.216.56-.477.96-.896 1.38a3.7 3.7 0 0 1-1.378.9c-.422.165-1.058.362-2.226.418c-1.266.06-1.645.072-4.85.079s-3.582-.006-4.848-.06m9.783-16.192a1.44 1.44 0 1 0 1.437-1.442a1.44 1.44 0 0 0-1.437 1.442M5.839 12.012a6.161 6.161 0 1 0 12.323-.024a6.162 6.162 0 0 0-12.323.024M8 12.008A4 4 0 1 1 12.008 16A4 4 0 0 1 8 12.008"
+                ></path></svg
+              >
+            </a>
+          </div>
+        </nav>
+      </div>
     </div>
-    <div class="flex items-center gap-1">
-      <Image src={phoneIcon} alt="Phone Icon" class="h-5 w-5" />
-      <a href="tel:+97145989049">+971 459 89049</a>
-    </div>
-    <div class="flex items-center gap-1">
-      <Image src={whatsappIcon} alt="WhatsApp Icon" class="h-5 w-5" />
-      <a href="https://wa.me/97156522317">+971 565 22317</a>
-    </div>
+    <p class="sm:hidden block text-center w-full text-xs text-zinc-300">
+      All rights reserved &copy; {new Date().getFullYear()} Azzams
+    </p>
   </div>
 </footer>

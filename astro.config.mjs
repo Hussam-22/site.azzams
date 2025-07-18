@@ -16,4 +16,7 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   integrations: [sitemap(), react(), robotsTxt(), playformCompress()],
+  server: {
+    host: true,
+  },
 });

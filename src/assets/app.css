@@ -8,4 +8,5 @@
 }
 @theme {
   --font-sans: "Open Sans", sans-serif;
+  --text-5xl: 2.75rem;
 }

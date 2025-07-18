@@ -48,7 +48,7 @@ const SERVICES = [
     description="Discover our range of smart home services designed to optimize your business operations."
   />
 
-  <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-8 h-full">
+  <div class="grid-cols-2 sm:grid-cols-3 gap-4 mt-8 h-full hidden sm:grid">
     {
       SERVICES.map((service) => (
         <div class="bg-base-200/40 rounded-4xl p-4">
@@ -62,5 +62,28 @@ const SERVICES = [
         </div>
       ))
     }
+  </div>
+
+  <div class="sm:hidden">
+    <div class="carousel carousel-center w-full max-w-md space-x-4 mt-8">
+      {
+        SERVICES.map((service, index) => (
+          <div
+            class="carousel-item w-[90%] bg-base-100  rounded-3xl"
+            id={`${index}`}
+          >
+            <div class="bg-base-200/40 rounded-4xl p-4">
+              <Image
+                src={service.icon}
+                alt={service.title}
+                class="w-16 h-16 mb-2"
+              />
+              <p class="font-bold">{service.title}</p>
+              <p>{service.description}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
   </div>
 </div>

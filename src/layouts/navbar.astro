@@ -1,16 +1,11 @@
 ---
 import Image from "astro/components/Image.astro";
 import Logo from "../assets/logo.svg";
+import { MENU_ITEMS } from "../data/menu-items";
 import Button from "../ui/button.astro";
+import SvgColor from "../ui/svg-color.astro";
 
 const url = Astro.url.pathname;
-
-const MENU_ITEMS = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Services", href: "/services" },
-  { name: "Contact", href: "/contact-us" },
-];
 ---
 
 <div class="drawer drawer-end">
@@ -64,7 +59,9 @@ const MENU_ITEMS = [
     <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"
     ></label>
     <div class="menu bg-base-100 min-h-full w-64 p-4 rounded-l-4xl">
-      <div class="flex flex-col gap-4 w-full h-full">
+      <div
+        class="flex flex-col gap-2 w-full h-full bg-base-200/40 p-4 rounded-4xl"
+      >
         <Image src={Logo} alt="Azzams Logo" class="h-14 w-14" />
         <div class="flex-col gap-2 px-2 font-bold text-2xl flex">
           {
@@ -81,7 +78,25 @@ const MENU_ITEMS = [
             ))
           }
         </div>
-        <Button text="Get free quote" size="large" />
+        <Button text="Get free quote" />
+      </div>
+
+      <div class="flex flex-col gap-2 p-2">
+        <div class="flex items-center gap-1">
+          <SvgColor iconPath="src/assets/icons/email.svg" alt="Mail Icon" />
+          <a href="mailto:info@azzams.com">info@azzams.com</a>
+        </div>
+        <div class="flex items-center gap-1">
+          <SvgColor iconPath="src/assets/icons/phone.svg" alt="Phone Icon" />
+          <a href="tel:+97145989049">+971 459 89049</a>
+        </div>
+        <div class="flex items-center gap-1">
+          <SvgColor
+            iconPath="src/assets/icons/whatsapp-white.svg"
+            alt="WhatsApp Icon"
+          />
+          <a href="https://wa.me/97156522317">+971 565 22317</a>
+        </div>
       </div>
     </div>
   </div>
