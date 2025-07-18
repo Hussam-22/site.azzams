@@ -7,7 +7,7 @@ import SectionHead from "../../ui/section-head.astro";
 ---
 
 <div
-  class="grid grid-cols-2 gap-8 items-center px-8 py-16 bg-zinc-900 text-white rounded-4xl"
+  class="grid grid-cols-1 sm:grid-cols-2 gap-8 items-center px-6 py-12 bg-zinc-900 text-white rounded-4xl"
 >
   <div>
     <SectionHead
@@ -15,10 +15,14 @@ import SectionHead from "../../ui/section-head.astro";
       description="Our Goal is to become the leading provider of premium smart home and business solutions in the UAE, delivering bespoke automation, security, and networking systems that redefine modern living. Our target is to integrate advanced technologies into over 1,000 homes and commercial spaces by 2027, setting a new standard for comfort, safety, and sophistication."
     />
 
-    <Button text="Get free quote" size="large" className="mt-4" />
+    <Button
+      text="Get free quote"
+      size="large"
+      className="mt-4 hidden sm:block"
+    />
   </div>
 
-  <div>
+  <div class="flex flex-col items-center gap-2">
     <figure class="diff aspect-16/9" tabindex="0">
       <div class="diff-item-1" role="img" tabindex="0">
         <Image
@@ -39,5 +43,10 @@ import SectionHead from "../../ui/section-head.astro";
     <p class="mt-4 font-bold text-center">
       Ditch the old light switch for a smart one!
     </p>
+    <Button
+      text="Get free quote"
+      size="large"
+      className="mt-4 sm:hidden block "
+    />
   </div>
 </div>

@@ -6,10 +6,10 @@ import HeroStats from "./hero-stats.astro";
 ---
 
 <div
-  class="bg-base-200/50 rounded-4xl p-6 sm:p-4 sm:flex items-center justify-between gap-8 hidden"
+  class="bg-base-200/50 rounded-4xl p-6 sm:p-4 xl:flex items-center justify-between gap-8 hidden"
 >
   <div
-    class="w-full sm:w-6/12 flex flex-col gap-4 sm:pl-4 text-center sm:text-left"
+    class="w-full sm:w-11/12 flex flex-col gap-4 sm:pl-4 text-center sm:text-left"
   >
     <h1 class="text-5xl sm:text-7xl font-extrabold uppercase">
       Smart Home Technology for Modern Lifestyle
@@ -35,12 +35,10 @@ import HeroStats from "./hero-stats.astro";
 </div>
 
 <div
-  class="rounded-4xl px-6 py-12 sm:p-4 flex items-center justify-between gap-8 sm:hidden bg-blend-overlay bg-black/45 bg-cover bg-center"
+  class="rounded-4xl px-6 py-12 flex items-center justify-between gap-8 xl:hidden bg-blend-overlay bg-black/45 bg-cover bg-center"
   style={"background-image: url('src/assets/images/hero-img.webp');"}
 >
-  <div
-    class="w-full sm:w-6/12 flex flex-col gap-4 sm:pl-4 text-center sm:text-left text-white"
-  >
+  <div class="w-full flex flex-col gap-4 sm:pl-4 text-center text-white">
     <h1 class="text-5xl sm:text-7xl font-extrabold uppercase">
       Smart Home Technology for Modern Lifestyle
     </h1>
@@ -51,15 +49,8 @@ import HeroStats from "./hero-stats.astro";
     <Button
       text="Get free quote"
       size="large"
-      className="self-center sm:self-start"
+      className="self-center xl:self-start"
     />
     <HeroStats />
-  </div>
-  <div class="w-6/12 relative hidden sm:block">
-    <Image
-      src={HeroImage}
-      alt="Hero Image"
-      class="h-full w-full object-cover rounded-4xl"
-    />
   </div>
 </div>
