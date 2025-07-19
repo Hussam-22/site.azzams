@@ -7,7 +7,7 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Get Free Quote - Azzams Smart Home Technology">
   <div
-    class="bg-base-200/50 rounded-4xl p-4 flex items-center justify-between gap-8"
+    class="bg-base-200/50 rounded-4xl p-6 sm:p-4 xl:flex items-center justify-between gap-8 hidden"
   >
     <div class="flex flex-row gap-12 items-center justify-center">
       <div class="w-6/12 flex flex-col justify-center text-center gap-4 pl-4">
@@ -24,6 +24,22 @@ import Layout from "../layouts/Layout.astro";
           alt="Contact Us"
           class="rounded-4xl w-full h-full object-cover"
         />
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="rounded-4xl px-6 py-12 flex items-center justify-between gap-8 xl:hidden bg-blend-overlay bg-black/45 bg-cover bg-center"
+    style={"background-image: url('public/assets/images/contact-us-img-2.png');"}
+  >
+    <div class="flex flex-row gap-12 items-center justify-center">
+      <div class="flex flex-col justify-center text-center gap-4 text-white">
+        <h1 class="text-5xl font-extrabold uppercase">Get free quote</h1>
+        <p class="text-lg">
+          We are here to help you make your house smarter. Please fill out the
+          form below and we will get back to you as soon as possible.
+        </p>
+        <ContactUsForm />
       </div>
     </div>
   </div>
