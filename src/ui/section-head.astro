@@ -1,8 +1,13 @@
 ---
-const { title, description } = Astro.props;
+const { title, description, gap } = Astro.props;
 ---
 
-<h2 class="text-5xl font-extrabold uppercase text-center sm:text-left">
+<h2
+  class:list={[
+    "text-5xl font-extrabold uppercase text-center sm:text-left",
+    gap,
+  ]}
+>
   {title}
 </h2>
 {

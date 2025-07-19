@@ -4,6 +4,7 @@ import TeamOne from "../../assets/images/team/team-1.jpg";
 import TeamTwo from "../../assets/images/team/team-2.jpg";
 import TeamThree from "../../assets/images/team/team-3.jpg";
 import TeamFour from "../../assets/images/team/team-4.jpg";
+import Carousel from "../../ui/carousel.astro";
 import SectionHead from "../../ui/section-head.astro";
 
 const TEAM = [
@@ -36,7 +37,7 @@ const TEAM = [
     title="Meet Our Team"
     description="Our team loves transforming traditional homes into smart homes, its all about passion and innovation."
   />
-  <div class="grid grid-cols-2 xl:grid-cols-4 mt-8 gap-4">
+  <div class="sm:grid sm:grid-cols-4 mt-8 gap-4 hidden">
     {
       TEAM.map((member) => (
         <div
@@ -57,5 +58,30 @@ const TEAM = [
         </div>
       ))
     }
+  </div>
+
+  <div class="xl:hidden">
+    <Carousel>
+      {
+        TEAM.map((member) => (
+          <div
+            class:list={[
+              "flex flex-col justify-center items-center gap-1 h-full rounded-4xl pb-2 ",
+              "carousel-item w-[80%] mx-auto bg-base-100 mr-3",
+            ]}
+          >
+            <Image
+              src={member.image}
+              alt={member.name}
+              class="w-full h-full object-cover p-1 rounded-4xl"
+            />
+            <div class="text-center">
+              <h2 class="text-xl font-semibold">{member.name}</h2>
+              <p class="text-md">{member.role}</p>
+            </div>
+          </div>
+        ))
+      }
+    </Carousel>
   </div>
 </div>
