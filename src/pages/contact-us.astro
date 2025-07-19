@@ -9,7 +9,7 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Contact Us - Azzams Smart Home Technology">
   <div
-    class="bg-base-200/50 rounded-4xl p-4 flex items-center justify-between gap-8"
+    class="bg-base-200/50 rounded-4xl p-6 sm:p-4 xl:flex items-center justify-between gap-8 hidden"
   >
     <div class="flex flex-row gap-12 items-center justify-center">
       <div class="w-6/12 flex flex-col justify-center text-center gap-4 pl-4">
@@ -54,6 +54,48 @@ import Layout from "../layouts/Layout.astro";
           alt="Contact Us"
           class="rounded-4xl w-full h-full object-cover"
         />
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="rounded-4xl px-6 py-12 flex items-center justify-between gap-8 xl:hidden bg-blend-overlay bg-black/45 bg-cover bg-center"
+    style={"background-image: url('public/assets/images/contact-us-img-1.png');"}
+  >
+    <div class="flex flex-row gap-12 items-center justify-center">
+      <div class="w-full flex flex-col gap-4 sm:pl-4 text-center text-white">
+        <h1 class="text-5xl font-extrabold uppercase">Lets Talk</h1>
+
+        <div class="flex flex-col gap-2 text-lg justify-start items-start">
+          <div class="flex items-center gap-1">
+            <Image
+              src={mailIcon}
+              alt="Mail Icon"
+              class="h-6 w-6 bg-black rounded-full p-1"
+            />
+            <a href="mailto:info@azzams.com">info@azzams.com</a>
+          </div>
+          <div class="flex items-center gap-1">
+            <Image
+              src={phoneIcon}
+              alt="Phone Icon"
+              class="h-6 w-6 bg-black rounded-full p-1"
+            />
+            <a href="tel:+97145989049">+971 459 89049</a>
+          </div>
+          <div class="flex items-center gap-1">
+            <Image
+              src={whatsappIcon}
+              alt="WhatsApp Icon"
+              class="h-6 w-6 bg-black rounded-full p-1"
+            />
+            <a href="https://wa.me/97156522317">+971 565 22317</a>
+          </div>
+          <p class="text-sm">Dubai Invesment Park Second, 104-0 Office 1-83</p>
+          <p class="text-sm">
+            Mohammed Azzam Alkhodhri Computer Systems Housing Services
+          </p>
+        </div>
       </div>
     </div>
   </div>
