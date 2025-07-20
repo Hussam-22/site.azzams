@@ -88,13 +88,16 @@ const SERVICES = [
         ))
       }
     </div>
-    <div class="flex w-full justify-center gap-2 py-2 mt-1" id="carousel-nav">
+    <div
+      class="flex w-full justify-center gap-2 py-2 mt-1"
+      id="services-carousel-nav"
+    >
       {
         SERVICES.map((_, index) => (
           <a
-            id={`carousel-nav-item-${index}`}
+            id={`services-carousel-nav-item-${index}`}
             href={`#service-item-${index}`}
-            class="rounded-full p-2 carousel-nav bg-base-200 transition-all duration-300"
+            class="rounded-full p-2 services-carousel-nav bg-base-200 transition-all duration-300"
           />
         ))
       }
@@ -110,7 +113,7 @@ const SERVICES = [
       (entries) => {
         entries.forEach((entry) => {
           const targetElement = document.getElementById(
-            `carousel-nav-item-${entry.target.id.split("-").pop()}`
+            `services-carousel-nav-item-${entry.target.id.split("-").pop()}`
           );
           if (targetElement) {
             if (entry.isIntersecting) {
@@ -123,7 +126,7 @@ const SERVICES = [
       },
       { threshold: 0.5 }
     );
-    const nav = document.getElementById("carousel-nav");
+    const nav = document.getElementById("services-carousel-nav");
     const carousel = document.getElementById("services-carousel");
 
     if (nav && carousel) {

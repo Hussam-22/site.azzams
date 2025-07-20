@@ -61,14 +61,15 @@ const TEAM = [
   </div>
 
   <div class="xl:hidden">
-    <Carousel>
+    <Carousel length={TEAM.length} name="team">
       {
-        TEAM.map((member) => (
+        TEAM.map((member, index) => (
           <div
             class:list={[
               "flex flex-col justify-center items-center gap-1 h-full rounded-4xl pb-2 ",
-              "carousel-item w-[80%] mx-auto bg-base-100 mr-3",
+              "carousel-item w-[90%] mx-auto bg-base-100 mr-3",
             ]}
+            id={`team-item-${index}`}
           >
             <Image
               src={member.image}
