@@ -72,7 +72,7 @@ const SERVICES = [
       {
         SERVICES.map((service, index) => (
           <div
-            class="carousel-item w-[90%] bg-base-100  rounded-3xl"
+            class="carousel-item bg-base-200/40 w-[90%] rounded-3xl"
             id={`service-item-${index}`}
           >
             <div class="bg-gradient-to-bl from-base-200/40 to-base-200 rounded-4xl p-4">
@@ -92,8 +92,9 @@ const SERVICES = [
       {
         SERVICES.map((_, index) => (
           <a
+            id={`carousel-nav-item-${index}`}
             href={`#service-item-${index}`}
-            class="bg-base-200 rounded-full p-2"
+            class="rounded-full p-2 carousel-nav bg-base-200 transition-all duration-300"
           />
         ))
       }
@@ -104,10 +105,32 @@ const SERVICES = [
 <script>
   // Carousel navigation without scroll jump
   document.addEventListener("DOMContentLoaded", function () {
+    // console.log(entries[0].target.id, entries[0].isIntersecting)
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const targetElement = document.getElementById(
+            `carousel-nav-item-${entry.target.id.split("-").pop()}`
+          );
+          if (targetElement) {
+            if (entry.isIntersecting) {
+              targetElement.classList.add("bg-purple-200");
+            } else {
+              targetElement.classList.remove("bg-purple-200");
+            }
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
     const nav = document.getElementById("carousel-nav");
     const carousel = document.getElementById("services-carousel");
+
     if (nav && carousel) {
       const items = carousel.querySelectorAll(".carousel-item");
+      items.forEach((item) => {
+        const result = observer.observe(item);
+      });
       if (items.length) {
         nav.querySelectorAll("a").forEach((btn, i) => {
           btn.addEventListener("click", function (e) {
