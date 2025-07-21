@@ -6,6 +6,7 @@ import GateControlIcon from "../../assets/icons/gate-access.svg";
 import AutomationIcon from "../../assets/icons/home-auto.svg";
 import IntercomIcon from "../../assets/icons/intercom.svg";
 import WifiIcon from "../../assets/icons/wifi.svg";
+import Carousel from "../../ui/carousel.astro";
 import SectionHead from "../../ui/section-head.astro";
 
 const SERVICES = [
@@ -65,87 +66,23 @@ const SERVICES = [
   </div>
 
   <div class="sm:hidden">
-    <div
-      class="carousel carousel-center w-full max-w-md space-x-4 mt-8"
-      id="services-carousel"
-    >
+    <Carousel length={SERVICES.length} name="services">
       {
         SERVICES.map((service, index) => (
           <div
-            class="carousel-item bg-base-200/40 w-[90%] rounded-3xl"
+            class="carousel-item bg-base-100 w-[90%] rounded-4xl p-4 flex flex-col"
             id={`service-item-${index}`}
           >
-            <div class="bg-gradient-to-bl from-base-200/40 to-base-200 rounded-4xl p-4">
-              <Image
-                src={service.icon}
-                alt={service.title}
-                class="w-16 h-16 mb-2"
-              />
-              <p class="font-bold">{service.title}</p>
-              <p>{service.description}</p>
-            </div>
+            <Image
+              src={service.icon}
+              alt={service.title}
+              class="w-16 h-16 mb-2"
+            />
+            <p class="font-bold">{service.title}</p>
+            <p>{service.description}</p>
           </div>
         ))
       }
-    </div>
-    <div
-      class="flex w-full justify-center gap-2 py-2 mt-1"
-      id="services-carousel-nav"
-    >
-      {
-        SERVICES.map((_, index) => (
-          <a
-            id={`services-carousel-nav-item-${index}`}
-            href={`#service-item-${index}`}
-            class="rounded-full p-2 services-carousel-nav bg-base-200 transition-all duration-300"
-          />
-        ))
-      }
-    </div>
+    </Carousel>
   </div>
 </div>
-
-<script>
-  // Carousel navigation without scroll jump
-  document.addEventListener("DOMContentLoaded", function () {
-    // console.log(entries[0].target.id, entries[0].isIntersecting)
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const targetElement = document.getElementById(
-            `services-carousel-nav-item-${entry.target.id.split("-").pop()}`
-          );
-          if (targetElement) {
-            if (entry.isIntersecting) {
-              targetElement.classList.add("bg-purple-200");
-            } else {
-              targetElement.classList.remove("bg-purple-200");
-            }
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-    const nav = document.getElementById("services-carousel-nav");
-    const carousel = document.getElementById("services-carousel");
-
-    if (nav && carousel) {
-      const items = carousel.querySelectorAll(".carousel-item");
-      items.forEach((item) => {
-        const result = observer.observe(item);
-      });
-      if (items.length) {
-        nav.querySelectorAll("a").forEach((btn, i) => {
-          btn.addEventListener("click", function (e) {
-            e.preventDefault();
-            items[i].scrollIntoView({
-              behavior: "smooth",
-              inline: "center",
-              block: "nearest",
-            });
-          });
-        });
-      }
-    }
-  });
-</script>

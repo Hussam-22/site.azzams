@@ -6,6 +6,7 @@ import Avatar3 from "../../assets/images/avatars/avatar-3.webp";
 import Avatar4 from "../../assets/images/avatars/avatar-4.webp";
 import Avatar5 from "../../assets/images/avatars/avatar-5.webp";
 import Avatar6 from "../../assets/images/avatars/avatar-6.webp";
+import Carousel from "../../ui/carousel.astro";
 import SectionHead from "../../ui/section-head.astro";
 
 const testimonials = [
@@ -84,10 +85,7 @@ const testimonials = [
 
 <div class="sm:hidden">
   <SectionHead title="Testimonials" />
-  <div
-    class="carousel carousel-center w-full max-w-md space-x-4 mt-8"
-    id="testimonials-carousel"
-  >
+  <Carousel length={testimonials.length} name="testimonials">
     {
       testimonials.map((testimonial, index) => (
         <div
@@ -111,64 +109,5 @@ const testimonials = [
         </div>
       ))
     }
-  </div>
-  <div
-    class="flex w-full justify-center gap-2 py-2 mt-1"
-    id="testimonials-carousel-nav"
-  >
-    {
-      testimonials.map((_, index) => (
-        <a
-          id={`testimonials-carousel-nav-item-${index}`}
-          href={`#service-item-${index}`}
-          class="rounded-full p-2 testimonials-carousel-nav bg-base-200 transition-all duration-300"
-        />
-      ))
-    }
-  </div>
+  </Carousel>
 </div>
-
-<script>
-  // Carousel navigation without scroll jump
-  document.addEventListener("DOMContentLoaded", function () {
-    // console.log(entries[0].target.id, entries[0].isIntersecting)
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const targetElement = document.getElementById(
-            `testimonials-carousel-nav-item-${entry.target.id.split("-").pop()}`
-          );
-          if (targetElement) {
-            if (entry.isIntersecting) {
-              targetElement.classList.add("bg-purple-200");
-            } else {
-              targetElement.classList.remove("bg-purple-200");
-            }
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-    const nav = document.getElementById("testimonials-carousel-nav");
-    const carousel = document.getElementById("testimonials-carousel");
-
-    if (nav && carousel) {
-      const items = carousel.querySelectorAll(".carousel-item");
-      items.forEach((item) => {
-        const result = observer.observe(item);
-      });
-      if (items.length) {
-        nav.querySelectorAll("a").forEach((btn, i) => {
-          btn.addEventListener("click", function (e) {
-            e.preventDefault();
-            items[i].scrollIntoView({
-              behavior: "smooth",
-              inline: "center",
-              block: "nearest",
-            });
-          });
-        });
-      }
-    }
-  });
-</script>
