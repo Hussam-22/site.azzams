@@ -1,4 +1,5 @@
 ---
+import { AstroFont } from "astro-font";
 import { SEO } from "astro-seo";
 import "../assets/app.css";
 import Container from "../ui/container.astro";
@@ -33,6 +34,36 @@ const { title = "Azzams Smart Home Technology" } = Astro.props;
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="MyWebSite" />
     <link rel="manifest" href="/site.webmanifest" />
+
+    <AstroFont
+      config={[
+        {
+          name: "Open Sans",
+          src: [
+            {
+              style: "normal",
+              weight: "400",
+              path: "https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpZ8xg.woff2",
+            },
+            {
+              style: "italic",
+              weight: "400",
+              path: "https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpZ8xg.woff2",
+            },
+            {
+              style: "bold",
+              weight: "700",
+              path: "https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpZ8xg.woff2",
+            },
+          ],
+          preload: true,
+          display: "swap",
+          selector: "body",
+          fallback: "sans-serif",
+        },
+      ]}
+    />
+
     <!-- <ClientRouter /> -->
   </head>
   <body>
@@ -41,11 +72,7 @@ const { title = "Azzams Smart Home Technology" } = Astro.props;
       <slot />
     </Container>
     <Footer />
-  </body><script
-    defer
-    is:inline
-    src="https://unpkg.com/tailwindcss-intersect@2.x.x/dist/observer.min.js"
-  ></script>
+  </body>
 </html>
 
 <style>
