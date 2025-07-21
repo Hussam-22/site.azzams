@@ -12,9 +12,11 @@ const url = Astro.url.pathname;
   <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
   <label for="my-drawer-3" class="sr-only">Toggle navigation menu</label>
   <div
-    class="backdrop-blur-xl bg-base-200/40 fixed left-1/2 transform -translate-x-1/2 top-3 z-20 px-4 flex flex-row items-center justify-between h-16 rounded-4xl w-[calc(100%-2rem)] xl:w-6/12 sm:w-11/12 md:w-8/12 sm:mx-0"
+    class="backdrop-blur-xl bg-base-200/40 fixed left-1/2 transform -translate-x-1/2 top-3 z-30 px-4 flex flex-row items-center justify-between h-16 rounded-4xl w-[calc(100%-2rem)] xl:w-6/12 sm:w-11/12 md:w-8/12 sm:mx-0"
   >
-    <Image src={Logo} alt="Azzams Logo" class="h-14 w-14" />
+    <a href="/">
+      <Image src={Logo} alt="Azzams Logo" class="h-14 w-14" />
+    </a>
     <Button text="Get free quote" className="sm:hidden" />
     <div class="lg:hidden">
       <label
@@ -63,7 +65,9 @@ const url = Astro.url.pathname;
       <div
         class="flex flex-col gap-2 w-full h-full bg-base-200/40 p-4 rounded-4xl"
       >
-        <Image src={Logo} alt="Azzams Logo" class="h-14 w-14" />
+        <a href="/">
+          <Image src={Logo} alt="Azzams Logo" class="h-14 w-14" />
+        </a>
         <div class="flex-col gap-2 px-2 font-bold text-2xl flex">
           {
             MENU_ITEMS.map((item) => (
