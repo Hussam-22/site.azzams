@@ -16,7 +16,7 @@ const testimonials = [
     image: Avatar2,
     testimonial:
       "I wanted full home automation and Azzams installed ABB i-bus KNX for me. It's been a year—no mistakes, working flawlessly.",
-    css: "border-r-2 border-r-black",
+    css: "border-r-2 border-r-base-300",
   },
   {
     name: "Saif Al Marri",
@@ -24,7 +24,7 @@ const testimonials = [
     image: Avatar6,
     testimonial:
       "My home had gaps in security coverage and slow Wi-Fi upstairs. Azzams diagnosed it in under an hour, installed two cameras and a mesh Wi-Fi extender—and now coverage is flawless, and I get alerts instantly. Peace of mind that actually works.",
-    css: "border-r-2 border-r-black",
+    css: "border-r-2 border-r-base-300",
   },
   {
     name: "Hamzah Arafat",
@@ -39,7 +39,7 @@ const testimonials = [
     image: Avatar4,
     testimonial:
       "I’ve managed subcontractors and tech before, but Azzams crew was the most punctual, detail-oriented team I’ve seen. Installation was clean, on time, and all cables hidden. The client was thrilled. I’ll hire them again.",
-    css: "border-r-2 border-r-black",
+    css: "border-r-2 border-r-base-300",
   },
   {
     name: "Maryam Mossa",
@@ -47,7 +47,7 @@ const testimonials = [
     image: Avatar5,
     testimonial:
       "Integrating smart lighting and sensors without ruining aesthetics is a nightmare. Azzam suggested custom, minimal-profile gear and installed everything with care. The result? A sleek living room and functionality that wows every guest.",
-    css: "border-r-2 border-r-black",
+    css: "border-r-2 border-r-base-300",
   },
   {
     name: "Dr. Manar Al Asaadi",
@@ -73,7 +73,9 @@ const testimonials = [
             />
             <div>
               <h3 class="font-bold">{testimonial.name}</h3>
-              <p class="text-sm text-gray-500">{testimonial.role}</p>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                {testimonial.role}
+              </p>
             </div>
           </div>
           <p class="text-base">{testimonial.testimonial}</p>
@@ -89,7 +91,7 @@ const testimonials = [
     {
       testimonials.map((testimonial, index) => (
         <div
-          class="carousel-item w-[90%] bg-base-100 border-2 border-black rounded-4xl"
+          class="carousel-item w-[90%] bg-base-100 rounded-4xl"
           id={`testimonial-item-${index}`}
         >
           <div class="flex flex-col items-start gap-3 p-4">

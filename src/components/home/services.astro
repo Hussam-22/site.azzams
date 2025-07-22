@@ -1,44 +1,38 @@
 ---
-import Image from "astro/components/Image.astro";
-import AccessControlIcon from "../../assets/icons/access-control.svg";
-import CCTVIcon from "../../assets/icons/cctv.svg";
-import GateControlIcon from "../../assets/icons/gate-access.svg";
-import AutomationIcon from "../../assets/icons/home-auto.svg";
-import IntercomIcon from "../../assets/icons/intercom.svg";
-import WifiIcon from "../../assets/icons/wifi.svg";
 import Carousel from "../../ui/carousel.astro";
 import SectionHead from "../../ui/section-head.astro";
+import SvgColor from "../../ui/svg-color.astro";
 
 const SERVICES = [
   {
     title: "Home Automation",
     description: "Smart control of lighting, climate, curtains,and more",
-    icon: AutomationIcon,
+    icon: "public/assets/icons/home-auto.svg",
   },
   {
     title: "Gate Control",
     description: "Advanced security for seamless property access.",
-    icon: GateControlIcon,
+    icon: "public/assets/icons/gate-access.svg",
   },
   {
     title: "CCTV Systems",
     description: "High-definition surveillance for peace of mind.",
-    icon: CCTVIcon,
+    icon: "public/assets/icons/cctv.svg",
   },
   {
     title: "Intercom Systems",
     description: "Clear, elegant communication throughout your space.",
-    icon: IntercomIcon,
+    icon: "public/assets/icons/intercom.svg",
   },
   {
     title: "Access Control",
     description: "Smart door entry systems for ultimate convenience.",
-    icon: AccessControlIcon,
+    icon: "public/assets/icons/access-control.svg",
   },
   {
     title: "WiFi Systems",
     description: "Seamless connectivity with advanced WiFi solutions",
-    icon: WifiIcon,
+    icon: "public/assets/icons/wifi.svg",
   },
 ];
 ---
@@ -52,11 +46,10 @@ const SERVICES = [
   <div class="grid-cols-2 sm:grid-cols-3 gap-4 mt-8 h-full hidden sm:grid">
     {
       SERVICES.map((service) => (
-        <div class="bg-base-200/40 rounded-4xl p-4">
-          <Image
-            src={service.icon}
-            alt={service.title}
-            class="w-16 h-16 mb-2"
+        <div class="bg-base-200 rounded-4xl p-4">
+          <SvgColor
+            iconPath={service.icon}
+            className="w-16 h-16 mb-2 dark:text-white"
           />
           <p class="font-bold">{service.title}</p>
           <p>{service.description}</p>
@@ -73,10 +66,9 @@ const SERVICES = [
             class="carousel-item bg-base-100 w-[90%] rounded-4xl p-4 flex flex-col"
             id={`service-item-${index}`}
           >
-            <Image
-              src={service.icon}
-              alt={service.title}
-              class="w-16 h-16 mb-2"
+            <SvgColor
+              iconPath={service.icon}
+              className="w-12 h-12 mb-2 dark:text-white"
             />
             <p class="font-bold">{service.title}</p>
             <p>{service.description}</p>

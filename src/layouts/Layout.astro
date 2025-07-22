@@ -9,8 +9,7 @@ import Navbar from "./navbar.astro";
 const { title = "Azzams Smart Home Technology" } = Astro.props;
 ---
 
-<!doctype html>
-<html lang="en">
+<html lang="en" data-theme="cmyk">
   <head>
     <SEO
       title={title}
@@ -80,6 +79,21 @@ const { title = "Azzams Smart Home Technology" } = Astro.props;
     />
 
     <!-- <ClientRouter /> -->
+    <script>
+      function setInitialTheme() {
+        const theme = localStorage.getItem("azzams-theme") || "cmyk";
+        document.documentElement.setAttribute("data-theme", theme);
+
+        const el = document.querySelector(".theme-controller");
+        if (!(el instanceof HTMLInputElement)) return;
+        const themeController = el;
+
+        themeController.checked = theme === "business";
+        localStorage.setItem("azzams-theme", theme);
+      }
+
+      setInitialTheme();
+    </script>
   </head>
   <body>
     <Navbar />

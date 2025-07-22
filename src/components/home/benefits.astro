@@ -1,12 +1,8 @@
 ---
-import Image from "astro/components/Image.astro";
-import AutomationIcon from "../../assets/icons/automation.svg";
-import HomeValueIcon from "../../assets/icons/home-value.svg";
-import LightBulbIcon from "../../assets/icons/light-bulb.svg";
-import SecurityIcon from "../../assets/icons/security.svg";
 import PhoneImage from "../../assets/images/mobile-app-mock.jpg";
 import PhoneMockup from "../../ui/phone-mockup.astro";
 import SectionHead from "../../ui/section-head.astro";
+import SvgColor from "../../ui/svg-color.astro";
 ---
 
 <div class="hidden sm:block">
@@ -16,7 +12,7 @@ import SectionHead from "../../ui/section-head.astro";
   />
 
   <div class="h-96 flex flex-row gap-2 font-light mt-8">
-    <div class="bg-base-200/40 p-6 rounded-4xl h-full w-3/12 overflow-hidden">
+    <div class="bg-base-200 p-6 rounded-4xl h-full w-3/12 overflow-hidden">
       <p class="text-2xl font-bold">Convenience</p>
       <p>
         Control lights, thermostats, locks, and appliances from only one sleek
@@ -35,16 +31,17 @@ import SectionHead from "../../ui/section-head.astro";
         </p>
       </div>
 
-      <div
-        class="p-6 rounded-4xl h-2/3 overflow-hidden relative bg-base-200/40"
-      >
+      <div class="p-6 rounded-4xl h-2/3 overflow-hidden relative bg-base-200">
         <p class="text-2xl font-bold">Energy Efficiency</p>
         <p>
           Advanced automation reduces energy waste by intelligently managing
           lighting, climate, and appliances in real time.
         </p>
         <div class="absolute -bottom-8 -right-8">
-          <Image src={LightBulbIcon} alt="Light Bulb Icon" class="w-44 h-44" />
+          <SvgColor
+            iconPath="public/assets/icons/light-bulb.svg"
+            className="w-44 h-44 text-base-content"
+          />
         </div>
       </div>
     </div>
@@ -58,33 +55,38 @@ import SectionHead from "../../ui/section-head.astro";
           Smart security systems provide real-time monitoring, instant alerts,
           and remote access—keeping your home protected 24/7
         </p>
-        <div class="absolute -bottom-8 right-0">
-          <Image src={SecurityIcon} alt="Light Bulb Icon" class="w-44 h-44" />
+        <div class="absolute -bottom-8 -right-3">
+          <SvgColor
+            iconPath="public/assets/icons/security.svg"
+            className="w-44 h-44 text-secondary"
+          />
         </div>
       </div>
 
       <div class="flex flex-row gap-2 justify-center items-center text-center">
         <div
-          class="bg-base-200/40 p-6 rounded-4xl w-1/2 relative overflow-hidden"
+          class="bg-base-200 p-6 rounded-4xl w-1/2 relative overflow-hidden h-full"
         >
-          <p class="text-2xl font-bold">Automation and Scheduling</p>
-          <div class="absolute -bottom-3 -right-3">
-            <Image
-              src={AutomationIcon}
-              alt="Home Value Icon"
-              class="w-18 h-18"
+          <p class="text-2xl font-bold w-[calc(100%-4rem)]">
+            Automation and Scheduling
+          </p>
+          <div class="absolute -bottom-8 -right-3">
+            <SvgColor
+              iconPath="public/assets/icons/automation.svg"
+              className="w-24 h-24 text-base-content"
             />
           </div>
         </div>
         <div
-          class="bg-base-200/40 p-6 rounded-4xl w-1/2 relative overflow-hidden"
+          class="bg-base-200 p-6 rounded-4xl w-1/2 relative overflow-hidden h-full"
         >
-          <p class="text-2xl font-bold">Increased Home Value</p>
-          <div class="absolute -bottom-3 -right-3">
-            <Image
-              src={HomeValueIcon}
-              alt="Home Value Icon"
-              class="w-18 h-18"
+          <p class="text-2xl font-bold w-[calc(100%-4rem)]">
+            Increased Home Value
+          </p>
+          <div class="absolute -bottom-8 -right-3">
+            <SvgColor
+              iconPath="public/assets/icons/home-value.svg"
+              className="w-24 h-24 text-base-content"
             />
           </div>
         </div>
@@ -100,7 +102,7 @@ import SectionHead from "../../ui/section-head.astro";
   />
 
   <div class="grid grid-cols-1 gap-6 font-light mt-8">
-    <div class="bg-base-200/40 p-6 rounded-4xl h-72 w-full overflow-hidden">
+    <div class="bg-base-200 p-6 rounded-4xl h-72 w-full overflow-hidden">
       <p class="text-2xl font-bold">Convenience</p>
       <p>
         Control lights, thermostats, locks, and appliances from only one sleek
@@ -111,7 +113,7 @@ import SectionHead from "../../ui/section-head.astro";
       </div>
     </div>
 
-    <div class="p-6 rounded-4xl h-full relative bg-base-200/40">
+    <div class="p-6 rounded-4xl h-full relative bg-base-200">
       <p class="text-2xl font-bold">Remote Access</p>
       <p>
         Managing your home from anywhere—set the AC before you arrive, check
@@ -119,32 +121,37 @@ import SectionHead from "../../ui/section-head.astro";
       </p>
     </div>
 
-    <div class="p-6 rounded-4xl h-full overflow-hidden relative bg-base-200/40">
+    <div class="p-6 rounded-4xl h-full overflow-hidden relative bg-base-200">
       <p class="text-2xl font-bold">Energy Efficiency</p>
       <p class="w-[calc(100%-2rem)]">
         Advanced automation reduces energy waste by intelligently managing
         lighting, climate, and appliances in real time.
       </p>
       <div class="absolute -bottom-8 -right-8">
-        <Image src={LightBulbIcon} alt="Light Bulb Icon" class="w-28 h-28" />
+        <SvgColor
+          iconPath="public/assets/icons/light-bulb.svg"
+          className="w-28 h-28 text-base-content"
+        />
       </div>
     </div>
     <div class="grid grid-cols-2 gap-4">
-      <div
-        class="bg-base-200/40 p-6 rounded-4xl w-full relative overflow-hidden"
-      >
+      <div class="bg-base-200 p-6 rounded-4xl w-full relative overflow-hidden">
         <p class="text-xl font-bold">Automation and Scheduling</p>
         <div class="absolute -bottom-3 -right-3">
-          <Image src={AutomationIcon} alt="Home Value Icon" class="w-18 h-18" />
+          <SvgColor
+            iconPath="public/assets/icons/automation.svg"
+            className="w-18 h-18 text-base-content"
+          />
         </div>
       </div>
 
-      <div
-        class="bg-base-200/40 p-6 rounded-4xl w-full relative overflow-hidden"
-      >
+      <div class="bg-base-200 p-6 rounded-4xl w-full relative overflow-hidden">
         <p class="text-xl font-bold">Increased Home Value</p>
         <div class="absolute -bottom-3 -right-3">
-          <Image src={HomeValueIcon} alt="Home Value Icon" class="w-18 h-18" />
+          <SvgColor
+            iconPath="public/assets/icons/home-value.svg"
+            className="w-18 h-18 text-base-content"
+          />
         </div>
       </div>
     </div>
@@ -157,7 +164,10 @@ import SectionHead from "../../ui/section-head.astro";
         remote access—keeping your home protected 24/7
       </p>
       <div class="absolute -bottom-8 -right-8">
-        <Image src={SecurityIcon} alt="Light Bulb Icon" class="w-28 h-28" />
+        <SvgColor
+          iconPath="public/assets/icons/security.svg"
+          className="w-28 h-28 text-secondary"
+        />
       </div>
     </div>
   </div>
