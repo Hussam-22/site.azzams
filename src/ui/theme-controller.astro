@@ -9,8 +9,6 @@ const { className = "" } = Astro.props;
     const themeController = el;
 
     themeController.addEventListener("change", () => {
-      console.log("updating");
-
       const theme = themeController.checked ? "business" : "cmyk";
       document.documentElement.setAttribute("data-theme", theme);
       localStorage.setItem("azzams-theme", theme);

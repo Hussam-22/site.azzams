@@ -7,7 +7,7 @@ import Button from "../../ui/button.astro";
   action="https://api.web3forms.com/submit"
   method="POST"
   id="form"
-  class="needs-validation xl:bg-white xl:p-6 pt-6 rounded-4xl flex flex-col gap-4 text-black"
+  class="needs-validation xl:bg-base-100 xl:p-6 pt-6 rounded-4xl flex flex-col gap-2 xl:gap-4 text-base-content"
   data-astro-reload
   novalidate
 >
@@ -22,7 +22,7 @@ import Button from "../../ui/button.astro";
       type="text"
       placeholder="Full Name"
       required
-      class="w-full bg-base-200 p-4 rounded-4xl placeholder:text-zinc-500"
+      class="w-full bg-base-300 p-4 rounded-4xl placeholder:text-zinc-500"
       name="name"
     />
     <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
@@ -34,7 +34,7 @@ import Button from "../../ui/button.astro";
       type="text"
       placeholder="Contact Number"
       required
-      class="w-full bg-base-200 p-4 rounded-4xl placeholder:text-zinc-500"
+      class="w-full bg-base-300 p-4 rounded-4xl placeholder:text-zinc-500"
       name="phone"
     />
     <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
@@ -48,7 +48,7 @@ import Button from "../../ui/button.astro";
       placeholder="Email Address"
       name="email"
       required
-      class="w-full bg-base-200 p-4 rounded-4xl placeholder:text-zinc-500"
+      class="w-full bg-base-300 p-4 rounded-4xl placeholder:text-zinc-500"
     />
     <div class="empty-feedback text-red-400 text-sm mt-1">
       Please provide your email address.
@@ -62,7 +62,7 @@ import Button from "../../ui/button.astro";
       name="message"
       required
       placeholder="Your requirements"
-      class="w-full bg-base-200 p-4 rounded-4xl h-36 resize-none placeholder:text-zinc-500"
+      class="w-full bg-base-300 p-4 rounded-4xl h-36 resize-none placeholder:text-zinc-500"
     ></textarea>
     <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
       Please enter your requirements.
@@ -70,7 +70,7 @@ import Button from "../../ui/button.astro";
   </div>
   <button
     type="submit"
-    class="bg-white text-black xl:bg-black xl:text-white hover:bg-zinc-700 px-4 py-2 rounded-4xl transition-colors duration-300 w-full xl:w-fit font-semibold self-end"
+    class="bg-white text-black xl:bg-base-content xl:text-accent hover:bg-zinc-700 px-4 py-2 rounded-4xl transition-colors duration-300 w-full xl:w-fit font-semibold self-end"
   >
     Send Message
   </button>

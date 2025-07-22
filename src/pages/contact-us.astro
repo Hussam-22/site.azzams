@@ -1,11 +1,8 @@
 ---
 import Image from "astro/components/Image.astro";
-import mailIcon from "../assets/icons/email.svg";
-import phoneIcon from "../assets/icons/phone.svg";
-import whatsappIcon from "../assets/icons/whatsapp-white.svg";
-import whatsappWhiteIcon from "../assets/icons/whatsapp.svg";
 import contactUsImage from "../assets/images/contact-us-img-1.png";
 import Layout from "../layouts/Layout.astro";
+import SvgColor from "../ui/svg-color.astro";
 ---
 
 <Layout title="Contact Us - Azzams Smart Home Technology">
@@ -17,29 +14,29 @@ import Layout from "../layouts/Layout.astro";
         <h1 class="text-5xl font-extrabold uppercase">Lets Talk</h1>
 
         <div
-          class="flex flex-col gap-2 text-lg justify-start items-start bg-white p-4 rounded-4xl"
+          class="flex flex-col gap-2 text-lg justify-start items-start bg-base-100 p-4 rounded-4xl"
         >
           <div class="flex items-center gap-1">
-            <Image
-              src={mailIcon}
+            <SvgColor
+              iconPath="src/assets/icons/email.svg"
               alt="Mail Icon"
-              class="h-6 w-6 bg-black rounded-full p-1"
+              className="text-base-content w-5 h-5"
             />
             <a href="mailto:info@azzams.com">info@azzams.com</a>
           </div>
           <div class="flex items-center gap-1">
-            <Image
-              src={phoneIcon}
+            <SvgColor
+              iconPath="src/assets/icons/phone.svg"
               alt="Phone Icon"
-              class="h-6 w-6 bg-black rounded-full p-1"
+              className="text-base-content w-5 h-5"
             />
             <a href="tel:+97145989049">+971 459 89049</a>
           </div>
           <div class="flex items-center gap-1">
-            <Image
-              src={whatsappIcon}
+            <SvgColor
+              iconPath="src/assets/icons/whatsapp-white.svg"
               alt="WhatsApp Icon"
-              class="h-6 w-6 bg-black rounded-full p-1"
+              className="text-base-content w-5 h-5"
             />
             <a href="https://wa.me/97156522317">+971 565 22317</a>
           </div>
@@ -70,18 +67,26 @@ import Layout from "../layouts/Layout.astro";
           class="flex flex-col gap-2 text-lg justify-start items-start text-left z-20"
         >
           <div class="flex items-center gap-1">
-            <Image src={mailIcon} alt="Mail Icon" class="h-6 w-6" />
+            <SvgColor
+              iconPath="src/assets/icons/email.svg"
+              alt="Mail Icon"
+              className="text-white w-5 h-5"
+            />
             <a href="mailto:info@azzams.com">info@azzams.com</a>
           </div>
           <div class="flex items-center gap-1">
-            <Image src={phoneIcon} alt="Phone Icon" class="h-6 w-6" />
+            <SvgColor
+              iconPath="src/assets/icons/phone.svg"
+              alt="Phone Icon"
+              className="text-white w-5 h-5"
+            />
             <a href="tel:+97145989049">+971 459 89049</a>
           </div>
           <div class="flex items-center gap-1">
-            <Image
-              src={whatsappWhiteIcon}
+            <SvgColor
+              iconPath="src/assets/icons/whatsapp-white.svg"
               alt="WhatsApp Icon"
-              class="h-6 w-6"
+              className="text-white w-5 h-5"
             />
             <a href="https://wa.me/97156522317">+971 565 22317</a>
           </div>
