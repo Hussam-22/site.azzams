@@ -1,43 +1,39 @@
 ---
-import Image from "astro/components/Image.astro";
-import ExpertIcon from "../../assets/icons/expert.svg";
-import PremiumIcon from "../../assets/icons/premium.svg";
-import TailoredIcon from "../../assets/icons/puzzle.svg";
-import SupportIcon from "../../assets/icons/support.svg";
+import SvgColor from "../../ui/svg-color.astro";
 
 const WHAT_YOU_GET = [
   {
     title: "Premium Products",
     description: "Access to the latest and most reliable smart home devices.",
-    icon: PremiumIcon,
+    icon: "public/assets/icons/premium.svg",
   },
   {
     title: "Expert Consultation",
     description: "Personalized advice to understand your unique needs.",
-    icon: ExpertIcon,
+    icon: "public/assets/icons/expert.svg",
   },
   {
     title: "Tailored Solutions",
     description:
       "Custom strategies designed to meet your specific requirements.",
-    icon: TailoredIcon,
+    icon: "public/assets/icons/puzzle.svg",
   },
   {
     title: "Ongoing Support",
     description: "Continuous assistance to ensure your success.",
-    icon: SupportIcon,
+    icon: "public/assets/icons/support.svg",
   },
 ];
 ---
 
 <div>
   <h2 class="text-5xl font-extrabold uppercase">What you get</h2>
-  <p class="text-lg">All our services come with:</p>
+  <p class="text-lg">All our services come with</p>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
     {
       WHAT_YOU_GET.map((item) => (
         <div class="bg-base-200 p-4 rounded-4xl">
-          <Image src={item.icon} alt={item.title} class="w-12 h-12 mb-4" />
+          <SvgColor iconPath={item.icon} class="w-12 h-12 text-white" />
           <h3 class="text-2xl font-bold">{item.title}</h3>
           <p class="text-base">{item.description}</p>
         </div>

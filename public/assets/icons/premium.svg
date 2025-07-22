@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-<svg fill="#000000" height="800px" width="800px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+<svg height="800px" width="800px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
 	 viewBox="0 0 215.777 215.777" xml:space="preserve">
+	 <defs>
+    <style>
+      .cls-1 {
+        fill: currentColor;
+        stroke: currentColor;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
 <path d="M198.333,164.99l-17.387-17.388c0.996-0.787,1.905-1.701,2.69-2.779c3.987-5.478,3.017-12.68,2.16-19.033
 	c-0.541-4.014-1.101-8.163-0.249-10.785c0.784-2.415,3.587-5.327,6.299-8.144c4.536-4.713,9.677-10.054,9.677-17.098
 	s-5.141-12.386-9.677-17.098c-2.711-2.816-5.515-5.729-6.298-8.143c-0.853-2.623-0.293-6.773,0.248-10.787

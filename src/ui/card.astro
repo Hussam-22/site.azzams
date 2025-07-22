@@ -19,7 +19,9 @@ const { title, description, image, badges } = Astro.props;
       {
         badges &&
           badges.map((badge) => (
-            <div class="badge bg-sky-200 badge-sm">{badge}</div>
+            <div class="badge bg-sky-200 dark:bg-sky-900 badge-sm rounded-4xl">
+              {badge}
+            </div>
           ))
       }
     </div>
