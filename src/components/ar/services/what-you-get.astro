@@ -1,0 +1,47 @@
+---
+import SvgColor from "../../ui/svg-color.astro";
+
+const WHAT_YOU_GET = [
+  {
+    title: "Premium Products",
+    description:
+      "Stay ahead with smart devices that deliver performance, reliability, and innovation.",
+    icon: "public/assets/icons/premium.svg",
+  },
+  {
+    title: "Expert Consultation",
+    description: "Zero guesswork. Advice that fits your needs perfectly.",
+    icon: "public/assets/icons/expert.svg",
+  },
+  {
+    title: "Tailored Solutions",
+    description: "Custom strategies built to match your exact needs.",
+    icon: "public/assets/icons/puzzle.svg",
+  },
+  {
+    title: "Ongoing Support",
+    description:
+      "Support that sticks, because your satisfaction isn’t optional.",
+    icon: "public/assets/icons/support.svg",
+  },
+];
+---
+
+<div>
+  <h2 class="text-5xl font-extrabold uppercase">What you get</h2>
+  <p class="text-lg">All our services come with</p>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+    {
+      WHAT_YOU_GET.map((item) => (
+        <div class="bg-base-200 p-4 rounded-4xl">
+          <SvgColor
+            iconPath={item.icon}
+            className="w-12 h-12 text-base-content"
+          />
+          <h3 class="text-2xl font-bold">{item.title}</h3>
+          <p class="text-base">{item.description}</p>
+        </div>
+      ))
+    }
+  </div>
+</div>

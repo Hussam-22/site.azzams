@@ -1,0 +1,86 @@
+---
+import Image from "astro/components/Image.astro";
+import accessControlImage from "../../assets/images/services/access-control.webp";
+import cctvSystemsImage from "../../assets/images/services/cctv-system.webp";
+import fingerprintAttendanceImage from "../../assets/images/services/fingerprint-system.webp";
+import gateControlImage from "../../assets/images/services/gate-control.webp";
+import homeAutomationImage from "../../assets/images/services/home-automation.webp";
+import intercomSystemsImage from "../../assets/images/services/intercom-system.webp";
+import voipPhonesImage from "../../assets/images/services/voip-phone.webp";
+import wifiSystemsImage from "../../assets/images/services/wifi-system.webp";
+
+const SERVICES = [
+  {
+    title: "Home Automation",
+    description:
+      "Powered by ABB, enabling full control of lighting, climate, curtains, and more from your phone or voice assistant.",
+    image: homeAutomationImage,
+  },
+  {
+    title: "Gate Control",
+    description:
+      "Automated and remote-controlled gate solutions tailored for your property.",
+    image: gateControlImage,
+  },
+  {
+    title: "CCTV Systems",
+    description:
+      "High-definition Hikvision cameras for comprehensive indoor and outdoor surveillance.",
+    image: cctvSystemsImage,
+  },
+  {
+    title: "Intercom Systems",
+    description:
+      "Seamless communication across rooms or entry points with reliable intercom solutions.",
+    image: intercomSystemsImage,
+  },
+  {
+    title: "Access Control",
+    description:
+      "Secure and smart access systems designed to protect your home or business.",
+    image: accessControlImage,
+  },
+  {
+    title: "WiFi Systems",
+    description:
+      "Enterprise-grade UniFi network installations to ensure reliable, fast connectivity throughout your home or business.",
+    image: wifiSystemsImage,
+  },
+  {
+    title: "VoIP Phones",
+    description:
+      "Professional-grade VoIP phones for crisp, reliable calls whether across the office or across the globe.",
+    image: voipPhonesImage,
+  },
+  {
+    title: "Fingerprint Attendance",
+    description:
+      "Secure, fast, and foolproof fingerprint attendance systems that keep track without the hassle.",
+    image: fingerprintAttendanceImage,
+  },
+];
+---
+
+<div>
+  <h2 class="text-5xl font-extrabold uppercase">Our Services</h2>
+  <p class="text-lg">
+    Explore our range of services designed to elevate your experience.
+  </p>
+  <div class="mt-6 sm:grid-cols-2 gap-4 grid-cols-1 grid">
+    {
+      SERVICES.map((service) => (
+        <div class="bg-base-200 flex flex-col sm:flex-row gap-0 sm:h-44 rounded-4xl p-2 items-center">
+          <Image
+            src={service.image}
+            alt={`Image for ${service.title}`}
+            class="h-full object-cover rounded-3xl sm:w-3/12"
+          />
+          <div class="sm:w-9/12 p-4">
+            <p class="text-xl font-bold">{service.title}</p>
+            <p class="text-lg">{service.description}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>

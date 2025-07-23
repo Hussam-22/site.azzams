@@ -1,0 +1,86 @@
+---
+import Carousel from "../../../ui/carousel.astro";
+import SectionHead from "../../../ui/section-head.astro";
+import SvgColor from "../../../ui/svg-color.astro";
+
+const SERVICES = [
+  {
+    title: "Home Automation",
+    description: "Smart control of lighting, climate, curtains,and more",
+    icon: "public/assets/icons/home-auto.svg",
+  },
+  {
+    title: "Gate Control",
+    description: "Advanced security for seamless property access.",
+    icon: "public/assets/icons/gate-access.svg",
+  },
+  {
+    title: "CCTV Systems",
+    description: "High-definition surveillance for peace of mind.",
+    icon: "public/assets/icons/cctv.svg",
+  },
+  {
+    title: "Intercom Systems",
+    description: "Clear, elegant communication throughout your space.",
+    icon: "public/assets/icons/intercom.svg",
+  },
+  {
+    title: "Access Control",
+    description: "Smart door entry systems for ultimate convenience.",
+    icon: "public/assets/icons/access-control.svg",
+  },
+  {
+    title: "WiFi Systems",
+    description: "Seamless connectivity with advanced WiFi solutions",
+    icon: "public/assets/icons/wifi.svg",
+  },
+];
+---
+
+<div>
+  <SectionHead
+    title="Services"
+    description="Discover our range of smart home services designed to optimize your business operations."
+  />
+
+  <div class="grid-cols-2 sm:grid-cols-3 gap-4 mt-8 h-full hidden sm:grid">
+    {
+      SERVICES.map((service) => (
+        <div class="bg-base-200 rounded-4xl p-4">
+          <SvgColor
+            iconPath={service.icon}
+            className="w-16 h-16 mb-2 dark:text-white"
+          />
+          <p class="font-bold">{service.title}</p>
+          <p>{service.description}</p>
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="sm:hidden">
+    <Carousel length={SERVICES.length} name="services">
+      {
+        SERVICES.map((service, index) => (
+          <div
+            class="carousel-item bg-base-100 w-[90%] rounded-4xl p-4 flex flex-col"
+            id={`service-item-${index}`}
+          >
+            <SvgColor
+              iconPath={service.icon}
+              className="w-12 h-12 mb-2 dark:text-white"
+            />
+            <p class="font-bold">{service.title}</p>
+            <p>{service.description}</p>
+          </div>
+        ))
+      }
+    </Carousel>
+  </div>
+
+  <div class="flex flex-col items-center sm:items-start mt-4">
+    <a href="/services" class="bg-base-300 px-4 py-2 rounded-4xl font-semibold"
+      >Learn more about our services</a
+    >
+  </div>
+</div>

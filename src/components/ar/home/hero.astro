@@ -1,0 +1,66 @@
+---
+import Image from "astro/components/Image.astro";
+import HeroImage from "../../../assets/images/hero-img-2.jpg";
+import MobileHeroImage from "../../../assets/images/hero-img-sm.jpg";
+import Button from "../../../ui/button.astro";
+import HeroStats from "./hero-stats.astro";
+---
+
+<div
+  class="bg-base-200 rounded-4xl p-6 sm:p-4 xl:flex items-center justify-between gap-8 hidden"
+>
+  <div
+    class="w-full sm:w-11/12 xl:w-6/12 flex flex-col gap-4 sm:pl-4 text-center sm:text-left"
+  >
+    <h1 class="text-5xl sm:text-7xl font-extrabold uppercase">
+      Smart Home Technology for Modern Lifestyle
+    </h1>
+    <p class="text-lg">
+      Delivering advanced automation, security, and networking systems tailored
+      to your needs.
+    </p>
+    <Button
+      text="Get free quote"
+      size="large"
+      className="self-center sm:self-start"
+    />
+    <HeroStats />
+  </div>
+  <div class="w-6/12 relative hidden sm:block">
+    <Image
+      src={HeroImage}
+      alt="Hero Image"
+      class="h-full w-full object-cover rounded-4xl"
+      loading="eager"
+    />
+  </div>
+</div>
+
+<!--   style={"background-image: url('/assets/images/hero-img.webp?v=1');"} -->
+<div
+  class="rounded-4xl px-6 py-12 flex items-center justify-between gap-8 xl:hidden bg-blend-overlay bg-black/45 bg-cover bg-center relative"
+>
+  <div class="w-full flex flex-col gap-4 sm:pl-4 text-center text-white">
+    <h1 class="text-5xl sm:text-7xl font-extrabold uppercase z-20">
+      Smart Home Technology for Modern Lifestyle
+    </h1>
+    <p class="text-lg z-20">
+      Delivering advanced automation, security, and networking systems tailored
+      to your needs.
+    </p>
+    <Button
+      text="Get free quote"
+      size="large"
+      className="self-center xl:self-start z-20"
+    />
+    <HeroStats />
+    <div class="absolute inset-0 bg-black/50 rounded-4xl z-10"></div>
+    <Image
+      src={MobileHeroImage}
+      alt="Hero Image"
+      class="h-full w-full object-cover rounded-4xl z-0 absolute inset-0"
+      loading="eager"
+      fetchpriority="high"
+    />
+  </div>
+</div>

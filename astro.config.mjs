@@ -19,4 +19,8 @@ export default defineConfig({
   server: {
     host: true,
   },
+  i18n: {
+    locales: ["ar", "en"],
+    defaultLocale: "en",
+  },
 });

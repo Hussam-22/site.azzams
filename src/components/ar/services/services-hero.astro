@@ -1,0 +1,50 @@
+---
+import Image from "astro/components/Image.astro";
+import HeroImage from "../../assets/images/services/service-man-1.webp";
+---
+
+<div
+  class="bg-base-200 rounded-4xl p-6 sm:p-4 xl:flex items-center justify-between gap-8 hidden"
+>
+  <div
+    class="w-full sm:w-11/12 xl:w-6/12 flex flex-col gap-4 sm:pl-4 text-center sm:text-left"
+  >
+    <h1 class="text-5xl sm:text-7xl font-extrabold uppercase">
+      Premium services, beyond expectations
+    </h1>
+    <p class="text-lg">
+      From essential installations to complex infrastructure, we provide smart,
+      high-reliability solutions aligned with UAE standards
+    </p>
+  </div>
+  <div class="w-6/12 relative hidden sm:block">
+    <Image
+      src={HeroImage}
+      alt="Hero Image"
+      class="h-full w-full object-cover rounded-4xl"
+    />
+  </div>
+</div>
+
+<div
+  class="rounded-4xl px-6 py-12 flex items-center justify-between gap-8 h-[calc(100vh-8rem)] xl:hidden bg-blend-overlay bg-black/45 bg-cover bg-center bg-no-repeat relative"
+>
+  <div class="w-full flex flex-col gap-4 sm:pl-4 text-center text-white">
+    <h1 class="text-5xl sm:text-7xl font-extrabold uppercase z-20">
+      Premium services, beyond expectations
+    </h1>
+    <p class="text-lg z-20">
+      From the simplest task to the most complex challenge — we deliver smart,
+      high-impact solutions that raise the bar. Quality isn’t just promised —
+      it’s built into everything we do
+    </p>
+
+    <div class="absolute inset-0 bg-black/50 rounded-4xl z-10"></div>
+    <Image
+      src={HeroImage}
+      alt="Hero Image"
+      class="h-full w-full object-cover rounded-4xl z-0 absolute inset-0"
+      loading="eager"
+    />
+  </div>
+</div>

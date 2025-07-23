@@ -1,0 +1,109 @@
+---
+import Image from "astro/components/Image.astro";
+import contactUsImage from "../assets/images/contact-us-img-1.png";
+import Layout from "../layouts/Layout.astro";
+import SvgColor from "../ui/svg-color.astro";
+---
+
+<Layout title="Contact Us - Azzams Smart Home Technology">
+  <div
+    class="bg-base-200 rounded-4xl p-6 sm:p-4 xl:flex items-center justify-between gap-8 hidden"
+  >
+    <div class="flex flex-row gap-12 items-center justify-center">
+      <div class="w-6/12 flex flex-col justify-center text-center gap-4 pl-4">
+        <h1 class="text-5xl font-extrabold uppercase">Lets Talk</h1>
+
+        <div
+          class="flex flex-col gap-2 text-lg justify-start items-start bg-base-100 p-4 rounded-4xl"
+        >
+          <div class="flex items-center gap-1">
+            <SvgColor
+              iconPath="src/assets/icons/email.svg"
+              alt="Mail Icon"
+              className="text-base-content w-5 h-5"
+            />
+            <a href="mailto:info@azzams.com">info@azzams.com</a>
+          </div>
+          <div class="flex items-center gap-1">
+            <SvgColor
+              iconPath="src/assets/icons/phone.svg"
+              alt="Phone Icon"
+              className="text-base-content w-5 h-5"
+            />
+            <a href="tel:+97145989049">+971 459 89049</a>
+          </div>
+          <div class="flex items-center gap-1">
+            <SvgColor
+              iconPath="src/assets/icons/whatsapp-white.svg"
+              alt="WhatsApp Icon"
+              className="text-base-content w-5 h-5"
+            />
+            <a href="https://wa.me/97156522317">+971 565 22317</a>
+          </div>
+          <p class="text-sm">Dubai Invesment Park Second, 104-0 Office 1-83</p>
+          <p class="text-sm">
+            Mohammed Azzam Alkhodhri Computer Systems Housing Services
+          </p>
+        </div>
+      </div>
+      <div class="w-6/12">
+        <Image
+          src={contactUsImage}
+          alt="Contact Us"
+          class="rounded-4xl w-full h-full object-cover"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="rounded-4xl px-6 py-12 flex items-center justify-between gap-8 xl:hidden bg-blend-overlay bg-black/45 bg-cover bg-center relative"
+  >
+    <div class="flex flex-row gap-12 items-center justify-center">
+      <div class="w-full flex flex-col gap-4 sm:pl-4 text-center text-white">
+        <h1 class="text-5xl font-extrabold uppercase z-20">Lets Talk</h1>
+
+        <div
+          class="flex flex-col gap-2 text-lg justify-start items-start text-left z-20"
+        >
+          <div class="flex items-center gap-1">
+            <SvgColor
+              iconPath="src/assets/icons/email.svg"
+              alt="Mail Icon"
+              className="text-white w-5 h-5"
+            />
+            <a href="mailto:info@azzams.com">info@azzams.com</a>
+          </div>
+          <div class="flex items-center gap-1">
+            <SvgColor
+              iconPath="src/assets/icons/phone.svg"
+              alt="Phone Icon"
+              className="text-white w-5 h-5"
+            />
+            <a href="tel:+97145989049">+971 459 89049</a>
+          </div>
+          <div class="flex items-center gap-1">
+            <SvgColor
+              iconPath="src/assets/icons/whatsapp-white.svg"
+              alt="WhatsApp Icon"
+              className="text-white w-5 h-5"
+            />
+            <a href="https://wa.me/97156522317">+971 565 22317</a>
+          </div>
+          <p class="text-sm">Dubai Invesment Park Second, 104-0 Office 1-83</p>
+          <p class="text-sm">
+            Mohammed Azzam Alkhodhri Computer Systems Housing Services
+          </p>
+        </div>
+
+        <div class="absolute inset-0 bg-black/50 rounded-4xl z-10"></div>
+        <Image
+          src={contactUsImage}
+          alt="Hero Image"
+          class="h-full w-full object-cover rounded-4xl z-0 absolute inset-0"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </div>
+</Layout>

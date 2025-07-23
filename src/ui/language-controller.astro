@@ -1,0 +1,25 @@
+---
+import Image from "astro/components/Image.astro";
+import { Debug } from "astro:components";
+import UAEFlag from "../assets/flags/uae.svg";
+import USAFlag from "../assets/flags/usa.svg";
+
+const url = Astro.url.pathname;
+const lang = url.split("/")[1] === "ar" ? "ar" : "en";
+const goToUrl = () => {
+  const path = url;
+  console.log({ path, lang, strippedPath: path.replace(/^\/ar\//, "/") });
+
+  return lang === "en" ? `/ar${path}` : `${path.replace(/^\/ar\//, "/")}`;
+};
+---
+
+<Debug {lang} />
+
+<a href={goToUrl()}>
+  <Image
+    src={lang === "ar" ? USAFlag : UAEFlag}
+    alt={lang === "ar" ? "USA Flag" : "UAE Flag"}
+    class="w-8 rounded-full object-cover"
+  />
+</a>
