@@ -80,19 +80,9 @@ const { title = "Azzams Smart Home Technology" } = Astro.props;
 
     <!-- <ClientRouter /> -->
     <script>
-      function setInitialTheme() {
-        const theme = localStorage.getItem("azzams-theme") || "cmyk";
-        document.documentElement.setAttribute("data-theme", theme);
-
-        const el = document.querySelector(".theme-controller");
-        if (!(el instanceof HTMLInputElement)) return;
-        const themeController = el;
-
-        themeController.checked = theme === "business";
-        localStorage.setItem("azzams-theme", theme);
-      }
-
-      setInitialTheme();
+      // Only set the initial theme on <html> from localStorage
+      const theme = localStorage.getItem("azzams-theme") || "cmyk";
+      document.documentElement.setAttribute("data-theme", theme);
     </script>
   </head>
   <body>
