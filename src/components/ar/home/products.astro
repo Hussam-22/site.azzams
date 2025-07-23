@@ -1,45 +1,44 @@
 ---
+import ProductCardSm from "../../../ui/product-card-sm.astro";
 import CameraIcon from "../../assets/icons/camera.svg";
 import DoorLockIcon from "../../assets/icons/door-lock.svg";
 import HomeHubIcon from "../../assets/icons/home-hub.svg";
 import LightBulbIcon from "../../assets/icons/light-bulb.svg";
 import SpeakerIcon from "../../assets/icons/speaker.svg";
 import ThermostatIcon from "../../assets/icons/thermometer.svg";
-import ProductCardSm from "../../ui/product-card-sm.astro";
 
 const PRODUCTS = [
   {
-    title: "Smart Home Hub",
+    title: "وحدة تحكم المنزل الذكي",
     icon: HomeHubIcon,
   },
   {
-    title: "Smart Thermostat",
+    title: "منظم حرارة ذكي",
     icon: ThermostatIcon,
   },
   {
-    title: "Smart Light Bulb",
+    title: "مصباح ذكي",
     icon: LightBulbIcon,
   },
   {
-    title: "Smart Security Camera",
+    title: "كاميرا أمان ذكية",
     icon: CameraIcon,
   },
   {
-    title: "Smart Door Lock",
+    title: "قفل باب ذكي",
     icon: DoorLockIcon,
   },
   {
-    title: "Smart Speaker",
+    title: "مكبر صوت ذكي",
     icon: SpeakerIcon,
   },
 ];
 ---
 
 <div>
-  <h2 class="text-5xl font-extrabold uppercase">Products</h2>
+  <h2 class="text-5xl font-extrabold uppercase">المنتجات</h2>
   <p class="text-lg">
-    Explore our range of smart home products designed to enhance your living
-    experience.
+    اكتشف مجموعتنا من منتجات المنزل الذكي المصممة لتعزيز تجربتك المعيشية.
   </p>
   <div class="grid grid-cols-3 sm:grid-cols-6 gap-4 mt-8">
     {

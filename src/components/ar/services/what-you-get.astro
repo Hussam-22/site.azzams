@@ -1,35 +1,34 @@
 ---
-import SvgColor from "../../ui/svg-color.astro";
+import SvgColor from "../../../ui/svg-color.astro";
 
 const WHAT_YOU_GET = [
   {
-    title: "Premium Products",
+    title: "منتجات متميزة",
     description:
-      "Stay ahead with smart devices that deliver performance, reliability, and innovation.",
+      "ابقَ في المقدمة مع أجهزة ذكية تقدم الأداء والموثوقية والابتكار.",
     icon: "public/assets/icons/premium.svg",
   },
   {
-    title: "Expert Consultation",
-    description: "Zero guesswork. Advice that fits your needs perfectly.",
+    title: "استشارة خبراء",
+    description: "بدون تخمين. نصائح تناسب احتياجاتك تماماً.",
     icon: "public/assets/icons/expert.svg",
   },
   {
-    title: "Tailored Solutions",
-    description: "Custom strategies built to match your exact needs.",
+    title: "حلول مصممة خصيصاً",
+    description: "استراتيجيات مخصصة لتناسب احتياجاتك الدقيقة.",
     icon: "public/assets/icons/puzzle.svg",
   },
   {
-    title: "Ongoing Support",
-    description:
-      "Support that sticks, because your satisfaction isn’t optional.",
+    title: "دعم مستمر",
+    description: "دعم دائم لأن رضاك ليس خياراً إضافياً.",
     icon: "public/assets/icons/support.svg",
   },
 ];
 ---
 
 <div>
-  <h2 class="text-5xl font-extrabold uppercase">What you get</h2>
-  <p class="text-lg">All our services come with</p>
+  <h2 class="text-5xl font-extrabold uppercase">ماذا ستحصل عليه</h2>
+  <p class="text-lg">جميع خدماتنا تشمل</p>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
     {
       WHAT_YOU_GET.map((item) => (

@@ -1,6 +1,5 @@
 ---
 import Image from "astro/components/Image.astro";
-import { Debug } from "astro:components";
 import UAEFlag from "../assets/flags/uae.svg";
 import USAFlag from "../assets/flags/usa.svg";
 
@@ -13,8 +12,6 @@ const goToUrl = () => {
   return lang === "en" ? `/ar${path}` : `${path.replace(/^\/ar\//, "/")}`;
 };
 ---
-
-<Debug {lang} />
 
 <a href={goToUrl()}>
   <Image
