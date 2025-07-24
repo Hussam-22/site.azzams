@@ -36,6 +36,7 @@ const TEAM = [
   <SectionHead
     title="تعرف على فريقنا"
     description="فريقنا شغوف بتحويل المنازل التقليدية إلى منازل ذكية، فالأمر كله يتعلق بالشغف والابتكار."
+    lang="ar"
   />
   <div class="sm:grid sm:grid-cols-4 mt-8 gap-4 hidden">
     {
@@ -52,8 +53,8 @@ const TEAM = [
             class="w-full h-full object-cover p-2 rounded-4xl"
           />
           <div class="text-center">
-            <h2 class="text-xl font-semibold">{member.name}</h2>
-            <p class="text-md">{member.role}</p>
+            <h2 class="text-2xl font-semibold">{member.name}</h2>
+            <p class="text-lg">{member.role}</p>
           </div>
         </div>
       ))
@@ -66,8 +67,8 @@ const TEAM = [
         TEAM.map((member, index) => (
           <div
             class:list={[
-              "flex flex-col justify-center items-center gap-1 h-fit rounded-4xl pb-2 ",
-              "carousel-item w-[90%] mx-auto bg-base-100 mr-3",
+              "flex flex-col justify-center items-center gap-1 h-fit rounded-4xl p-1 ",
+              "carousel-item w-[90%] mx-auto bg-base-200 mr-3",
             ]}
             id={`team-item-${index}`}
           >
@@ -77,8 +78,8 @@ const TEAM = [
               class="w-full h-full object-cover p-1 rounded-4xl"
             />
             <div class="text-center">
-              <h2 class="text-xl font-semibold">{member.name}</h2>
-              <p class="text-md">{member.role}</p>
+              <h2 class="text-2xl font-semibold">{member.name}</h2>
+              <p class="text-lg">{member.role}</p>
             </div>
           </div>
         ))

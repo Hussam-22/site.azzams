@@ -1,4 +1,5 @@
 ---
+import SectionHead from "../../../ui/section-head.astro";
 import SvgColor from "../../../ui/svg-color.astro";
 
 const WHAT_YOU_GET = [
@@ -27,8 +28,11 @@ const WHAT_YOU_GET = [
 ---
 
 <div>
-  <h2 class="text-5xl font-extrabold uppercase">ماذا ستحصل عليه</h2>
-  <p class="text-lg">جميع خدماتنا تشمل</p>
+  <SectionHead
+    title="ماذا ستحصل عليه"
+    description="استكشف الفوائد التي نقدمها مع كل خدمة."
+    lang="ar"
+  />
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
     {
       WHAT_YOU_GET.map((item) => (
@@ -37,8 +41,8 @@ const WHAT_YOU_GET = [
             iconPath={item.icon}
             className="w-12 h-12 text-base-content"
           />
-          <h3 class="text-2xl font-bold">{item.title}</h3>
-          <p class="text-base">{item.description}</p>
+          <h3 class="text-2xl font-semibold">{item.title}</h3>
+          <p class="text-xl">{item.description}</p>
         </div>
       ))
     }

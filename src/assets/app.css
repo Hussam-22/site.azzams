@@ -1,4 +1,3 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"); */
 @import "tailwindcss";
 @plugin "daisyui";
 @plugin "daisyui/theme" {
@@ -15,7 +14,7 @@
 @plugin "daisyui/theme" {
   name: "business";
   default: false;
-  --color-base-100: #202020;
+  --color-base-100: #191919;
   --color-base-200: #292929;
   --color-base-300: #333333;
   --color-base-content: #ffffff;
@@ -25,6 +24,7 @@
 }
 @theme {
   --font-sans: "Open Sans", sans-serif;
+  --font-ar: "Beiruti", sans-serif;
   --text-5xl: 2.75rem;
 }
 @custom-variant dark (&:where([data-theme=business], [data-theme=business] *));

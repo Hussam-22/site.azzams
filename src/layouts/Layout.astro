@@ -7,9 +7,10 @@ import Footer from "../ui/footer.astro";
 import Navbar from "./navbar.astro";
 
 const { title = "Azzams Smart Home Technology" } = Astro.props;
+const isArabic = Astro.props.lang === "ar";
 ---
 
-<html lang="en" data-theme="cmyk">
+<html lang="en" data-theme="cmyk" dir={isArabic ? "rtl" : "ltr"}>
   <head>
     <SEO
       title={title}
@@ -72,6 +73,50 @@ const { title = "Azzams Smart Home Technology" } = Astro.props;
           preload: true,
           display: "swap",
           selector: "body",
+          fallback: "sans-serif",
+        },
+        {
+          name: "Beiruti",
+          src: [
+            {
+              style: "light",
+              weight: "200",
+              path: "./public/fonts/Beiruti-ExtraLight.ttf",
+            },
+            {
+              style: "light",
+              weight: "300",
+              path: "./public/fonts/Beiruti-Light.ttf",
+            },
+            {
+              style: "normal",
+              weight: "400",
+              path: "./public/fonts/Beiruti-Regular.ttf",
+            },
+            {
+              style: "medium",
+              weight: "500",
+              path: "./public/fonts/Beiruti-Medium.ttf",
+            },
+            {
+              style: "semibold",
+              weight: "600",
+              path: "./public/fonts/Beiruti-SemiBold.ttf",
+            },
+            {
+              style: "bold",
+              weight: "700",
+              path: "./public/fonts/Beiruti-Bold.ttf",
+            },
+            {
+              style: "extrabold",
+              weight: "800",
+              path: "./public/fonts/Beiruti-ExtraBold.ttf",
+            },
+          ],
+          preload: true,
+          display: "swap",
+          selector: "",
           fallback: "sans-serif",
         },
       ]}

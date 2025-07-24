@@ -1,4 +1,5 @@
 ---
+import SectionHead from "../../ui/section-head.astro";
 import SvgColor from "../../ui/svg-color.astro";
 
 const WHAT_YOU_GET = [
@@ -28,8 +29,10 @@ const WHAT_YOU_GET = [
 ---
 
 <div>
-  <h2 class="text-5xl font-extrabold uppercase">What you get</h2>
-  <p class="text-lg">All our services come with</p>
+  <SectionHead
+    title="What You Get"
+    description="Explore the benefits we offer with every service."
+  />
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
     {
       WHAT_YOU_GET.map((item) => (

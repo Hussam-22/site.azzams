@@ -1,17 +1,23 @@
 ---
-const { title, description, gap } = Astro.props;
+const { title, description, gap, lang = "en" } = Astro.props;
 ---
 
 <h2
   class:list={[
-    "text-5xl font-extrabold uppercase text-center sm:text-left",
+    "font-extrabold uppercase text-center ",
     gap,
+    lang === "ar" ? "sm:text-right text-7xl" : "sm:text-left text-5xl",
   ]}
 >
   {title}
 </h2>
 {
   description && (
-    <p class="text-lg mb-4 text-center sm:text-left">{`${description}`}</p>
+    <p
+      class:list={[
+        "mb-4 text-center ",
+        lang === "ar" ? "sm:text-right text-2xl" : "sm:text-left text-lg",
+      ]}
+    >{`${description}`}</p>
   )
 }

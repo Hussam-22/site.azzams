@@ -56,11 +56,10 @@ const PROJECTS = [
   <SectionHead
     title="مشاريع حديثة"
     description="هذه بعض مشاريعنا الأخيرة التي تبرز خبرتنا في تحويل المنازل بالتقنيات الذكية الحديثة."
+    lang="ar"
   />
 
-  <div
-    class="sm:grid grid-cols-4 mt-4 bg-base-200 p-2 rounded-4xl gap-2 hidden"
-  >
+  <div class="sm:grid grid-cols-4 mt-4 gap-2 hidden">
     {
       PROJECTS.map((project) => (
         <Card
@@ -76,10 +75,7 @@ const PROJECTS = [
   <Carousel length={PROJECTS.length} name="projects">
     {
       PROJECTS.map((project, index) => (
-        <div
-          class="carousel-item w-[90%] bg-base-100 rounded-4xl"
-          id={`project-item-${index}`}
-        >
+        <div class="carousel-item w-[90%]" id={`project-item-${index}`}>
           <Card
             title={project.title}
             description={project.description}

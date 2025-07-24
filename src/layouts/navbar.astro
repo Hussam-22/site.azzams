@@ -9,7 +9,7 @@ const url = Astro.url.pathname;
 const lang = url.split("/")[1] === "ar" ? "ar" : "en";
 ---
 
-<div class="drawer drawer-end">
+<div class:list={["drawer drawer-end", lang === "ar" ? "font-ar" : ""]}>
   <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
   <label for="my-drawer-3" class="sr-only">Toggle navigation menu</label>
   <div
@@ -23,7 +23,7 @@ const lang = url.split("/")[1] === "ar" ? "ar" : "en";
       />
     </a>
     <Button
-      text={lang === "ar" ? "احصل على عرض مجاني" : "Get free quote"}
+      text={lang === "ar" ? "احصل على عرض سعر مجاني" : "Get free quote"}
       className="sm:hidden"
     />
     <div class="lg:hidden">
@@ -48,14 +48,16 @@ const lang = url.split("/")[1] === "ar" ? "ar" : "en";
     </div>
 
     <div
-      class="flex-row gap-4 sm:gap-6 px-1 font-semibold text-md hidden sm:flex"
+      class:list={[
+        "gap-4 sm:gap-6 px-1 font-semibold text-md hidden sm:flex flex-row",
+      ]}
     >
       {
         MENU_ITEMS[lang].map((item) => (
           <a
             id={item.name}
             href={item.href}
-            class={`hover:text-sky-500 active:text-sky-600 transition-colors duration-300 font-sans ${
+            class={`hover:text-sky-500 active:text-sky-600 transition-colors duration-300 ${
               url === item.href ? "text-sky-500" : ""
             }`}
           >
@@ -65,7 +67,7 @@ const lang = url.split("/")[1] === "ar" ? "ar" : "en";
       }
     </div>
     <Button
-      text={lang === "ar" ? "احصل على عرض مجاني" : "Get free quote"}
+      text={lang === "ar" ? "احصل على عرض سعر مجاني" : "Get free quote"}
       className="hidden sm:block"
     />
     <LanguageController />
@@ -89,7 +91,7 @@ const lang = url.split("/")[1] === "ar" ? "ar" : "en";
               <a
                 id={item.name}
                 href={item.href}
-                class={`hover:text-sky-500 active:text-sky-600 transition-colors duration-300 font-sans ${
+                class={`hover:text-sky-500 active:text-sky-600 transition-colors duration-300 ${
                   url === item.href ? "text-sky-500" : ""
                 }`}
               >
@@ -98,10 +100,13 @@ const lang = url.split("/")[1] === "ar" ? "ar" : "en";
             ))
           }
         </div>
-        <Button text="Get free quote" />
+        <Button
+          text={lang === "ar" ? "احصل على عرض سعر مجاني" : "Get free quote"}
+          className="sm:hidden"
+        />
       </div>
       <hr class="border-base-300 border-dashed my-4" />
-      <p class="font-bold">تواصل معنا</p>
+      <p class="font-bold">{lang === "ar" ? "تواصل معنا" : "Contact Us"}</p>
       <div class="flex flex-col gap-2 p-2">
         <div class="flex items-center gap-1">
           <SvgColor
@@ -109,8 +114,7 @@ const lang = url.split("/")[1] === "ar" ? "ar" : "en";
             alt="Mail Icon"
             className="w-6 h-6 text-base-content"
           />
-          <a href="mailto:info@azzams.com">البريد الإلكتروني: info@azzams.com</a
-          >
+          <a href="mailto:info@azzams.com">info@azzams.com</a>
         </div>
         <div class="flex items-center gap-1">
           <SvgColor
@@ -118,7 +122,8 @@ const lang = url.split("/")[1] === "ar" ? "ar" : "en";
             alt="Phone Icon"
             className="w-6 h-6 text-base-content"
           />
-          <a href="tel:+97145989049">الهاتف: +971 459 89049</a>
+          <a href="tel:+97145989049" style={"direction: ltr;"}>+971 459 89049</a
+          >
         </div>
         <div class="flex items-center gap-1">
           <SvgColor
@@ -126,14 +131,23 @@ const lang = url.split("/")[1] === "ar" ? "ar" : "en";
             alt="WhatsApp Icon"
             className="w-6 h-6 text-base-content"
           />
-          <a href="https://wa.me/97156522317">واتساب: +971 565 22317</a>
+          <a href="https://wa.me/97156522317" style={"direction: ltr;"}
+            >+971 565 22317</a
+          >
         </div>
       </div>
       <hr class="border-base-300 border-dashed my-4" />
       <div
         class="flex items-center gap-2 bg-base-300 py-1 px-3 rounded-4xl justify-center"
       >
-        <p class="font-bold capitalize text-md sm:text-xs">تغيير النمط</p>
+        <p
+          class:list={[
+            "font-bold capitalize",
+            lang === "ar" ? "text-lg sm:text-md" : "text-md sm:text-xs",
+          ]}
+        >
+          {lang === "ar" ? "تبديل الوضع" : "Switch Mode"}
+        </p>
         <ThemeController />
       </div>
     </div>

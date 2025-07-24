@@ -5,9 +5,9 @@ import Layout from "../../layouts/Layout.astro";
 import SvgColor from "../../ui/svg-color.astro";
 ---
 
-<Layout title="Contact Us - Azzams Smart Home Technology">
+<Layout title="تواصل معنا - عزامز لتقنية المنازل الذكية" lang="ar">
   <div
-    class="bg-base-200 rounded-4xl p-6 sm:p-4 xl:flex items-center justify-between gap-8 hidden"
+    class="bg-base-200 rounded-4xl p-6 sm:p-4 xl:flex items-center justify-between gap-8 hidden font-ar"
   >
     <div class="flex flex-row gap-12 items-center justify-center">
       <div class="w-6/12 flex flex-col justify-center text-center gap-4 pl-4">
@@ -30,7 +30,8 @@ import SvgColor from "../../ui/svg-color.astro";
               alt="Phone Icon"
               className="text-base-content w-5 h-5"
             />
-            <a href="tel:+97145989049">+971 459 89049</a>
+            <a href="tel:+97145989049" style="direction: ltr;">+971 459 89049</a
+            >
           </div>
           <div class="flex items-center gap-1">
             <SvgColor
@@ -38,12 +39,14 @@ import SvgColor from "../../ui/svg-color.astro";
               alt="WhatsApp Icon"
               className="text-base-content w-5 h-5"
             />
-            <a href="https://wa.me/97156522317">+971 565 22317</a>
+            <a href="https://wa.me/97156522317" style="direction: ltr;"
+              >+971 565 22317</a
+            >
           </div>
-          <p class="text-sm">
+          <p class="text-lg">
             مجمع دبي للاستثمار الثاني، مكتب 1-83، الطابق 104-0
           </p>
-          <p class="text-sm">خدمات أنظمة الحاسوب محمد عزام الخضري</p>
+          <p class="text-lg">خدمات أنظمة الحاسوب محمد عزام الخضري</p>
         </div>
       </div>
       <div class="w-6/12">

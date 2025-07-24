@@ -8,6 +8,7 @@ import homeAutomationImage from "../../../assets/images/services/home-automation
 import intercomSystemsImage from "../../../assets/images/services/intercom-system.webp";
 import voipPhonesImage from "../../../assets/images/services/voip-phone.webp";
 import wifiSystemsImage from "../../../assets/images/services/wifi-system.webp";
+import SectionHead from "../../../ui/section-head.astro";
 
 const SERVICES = [
   {
@@ -59,10 +60,11 @@ const SERVICES = [
 ---
 
 <div>
-  <h2 class="text-5xl font-extrabold uppercase">Our Services</h2>
-  <p class="text-lg">
-    Explore our range of services designed to elevate your experience.
-  </p>
+  <SectionHead
+    title="خدماتنا"
+    description="استكشف مجموعة خدماتنا المصممة لرفع مستوى تجربتك."
+    lang="ar"
+  />
   <div class="mt-6 sm:grid-cols-2 gap-4 grid-cols-1 grid">
     {
       SERVICES.map((service) => (
@@ -73,8 +75,8 @@ const SERVICES = [
             class="h-full object-cover rounded-3xl sm:w-3/12"
           />
           <div class="sm:w-9/12 p-4">
-            <p class="text-xl font-bold">{service.title}</p>
-            <p class="text-lg">{service.description}</p>
+            <p class="text-2xl font-bold">{service.title}</p>
+            <p class="text-xl">{service.description}</p>
           </div>
         </div>
       ))

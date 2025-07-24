@@ -1,5 +1,6 @@
 ---
 import Button from "../../ui/button.astro";
+const { lang } = Astro.props;
 ---
 
 <!-- // Styling Requires Tailwind CSS -->
@@ -11,8 +12,6 @@ import Button from "../../ui/button.astro";
   data-astro-reload
   novalidate
 >
-  <!-- class="w-full px-4 py-3 border placeholder:text-slate-400 rounded-4xl outline-none focus:ring-4 border-slate-300 focus:border-slate-600 ring-slate-100" -->
-
   <!-- Add your Web3Forms Access Key -->
   <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
 
@@ -20,59 +19,106 @@ import Button from "../../ui/button.astro";
   <div class="">
     <input
       type="text"
-      placeholder="Full Name"
+      placeholder={lang === "ar" ? "الاسم الكامل" : "Full Name"}
       required
       class="w-full bg-base-300 p-4 rounded-4xl placeholder:text-zinc-500"
       name="name"
     />
-    <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
-      Please provide your full name.
+    <div
+      class:list={[
+        "empty-feedback invalid-feedback text-red-400 mt-1",
+        lang === "ar" ? "text-md" : "text-sm",
+      ]}
+    >
+      {
+        lang === "ar"
+          ? "الرجاء إدخال اسمك الكامل."
+          : "Please provide your full name."
+      }
     </div>
   </div>
   <div class="">
     <input
       type="text"
-      placeholder="Contact Number"
+      placeholder={lang === "ar" ? "رقم الهاتف" : "Contact Number"}
       required
       class="w-full bg-base-300 p-4 rounded-4xl placeholder:text-zinc-500"
       name="phone"
     />
-    <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
-      Please provide your contact number.
+    <div
+      class:list={[
+        "empty-feedback invalid-feedback text-red-400 mt-1",
+        lang === "ar" ? "text-md" : "text-sm",
+      ]}
+    >
+      {
+        lang === "ar"
+          ? "الرجاء إدخال رقم هاتفك."
+          : "Please provide your contact number."
+      }
     </div>
   </div>
   <div class="">
-    <label for="email_address" class="sr-only">Email Address</label><input
+    <label for="email_address" class="sr-only"
+      >{lang === "ar" ? "البريد الإلكتروني" : "Email Address"}</label
+    ><input
       id="email_address"
       type="email"
-      placeholder="Email Address"
+      placeholder={lang === "ar" ? "البريد الإلكتروني" : "Email Address"}
       name="email"
       required
       class="w-full bg-base-300 p-4 rounded-4xl placeholder:text-zinc-500"
     />
-    <div class="empty-feedback text-red-400 text-sm mt-1">
-      Please provide your email address.
+    <div
+      class:list={[
+        "empty-feedback invalid-feedback text-red-400 mt-1",
+        lang === "ar" ? "text-md" : "text-sm",
+      ]}
+    >
+      {
+        lang === "ar"
+          ? "الرجاء إدخال بريدك الإلكتروني."
+          : "Please provide your email address."
+      }
     </div>
     <div class="invalid-feedback text-red-400 text-sm mt-1">
-      Please provide a valid email address.
+      {
+        lang === "ar"
+          ? "الرجاء إدخال عنوان بريد إلكتروني صالح."
+          : "Please provide a valid email address."
+      }
     </div>
   </div>
   <div class="">
     <textarea
       name="message"
       required
-      placeholder="Your requirements"
+      placeholder={lang === "ar" ? "متطلباتك" : "Your Requirements"}
       class="w-full bg-base-300 p-4 rounded-4xl h-36 resize-none placeholder:text-zinc-500"
     ></textarea>
-    <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
-      Please enter your requirements.
+    <div
+      class:list={[
+        "empty-feedback invalid-feedback text-red-400 mt-1",
+        lang === "ar" ? "text-md" : "text-sm",
+      ]}
+    >
+      {
+        lang === "ar"
+          ? "الرجاء إدخال متطلباتك."
+          : "Please provide your requirements."
+      }
+      {
+        lang === "ar"
+          ? "الرجاء إدخال متطلباتك."
+          : "Please provide your requirements."
+      }
     </div>
   </div>
   <button
     type="submit"
-    class="bg-white text-black xl:bg-base-content xl:text-accent hover:bg-zinc-700 px-4 py-2 rounded-4xl transition-colors duration-300 w-full xl:w-fit font-semibold self-end"
+    class="bg-white text-black xl:bg-base-content xl:text-accent hover:bg-sky-500 px-4 py-2 rounded-4xl transition-colors duration-300 w-full xl:w-fit font-semibold self-end"
   >
-    Send Message
+    {lang === "ar" ? "إرسال" : "Send Message"}
   </button>
   <div id="result" class="mt-3 text-center"></div>
 </form>
