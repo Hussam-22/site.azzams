@@ -1,7 +1,7 @@
 ---
 import Image from "astro/components/Image.astro";
 
-const { title, description, image, badges } = Astro.props;
+const { title, description, image, badges, lang = "en" } = Astro.props;
 ---
 
 <div class="bg-base-200 w-full rounded-4xl">
@@ -13,8 +13,10 @@ const { title, description, image, badges } = Astro.props;
     />
   </figure>
   <div class="py-2 flex flex-col gap-2 px-4">
-    <h2 class="font-bold">{title}</h2>
-    <p class="font-light text-sm">{description}</p>
+    <h2 class:list={["font-bold", lang === "ar" ? "text-xl" : ""]}>{title}</h2>
+    <p class:list={["font-light", lang === "ar" ? "text-lg" : "text-sm"]}>
+      {description}
+    </p>
     <div class="flex flex-wrap gap-2">
       {
         badges &&
