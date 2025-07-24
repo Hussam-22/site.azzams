@@ -40,7 +40,7 @@ const SERVICES = [
 <div>
   <SectionHead
     title="Services"
-    description="Discover our range of smart home services designed to optimize your business operations."
+    description="Discover our advanced automation, security, and networking systems tailored to your needs."
   />
 
   <div class="grid-cols-2 sm:grid-cols-3 gap-4 mt-8 h-full hidden sm:grid">
@@ -63,7 +63,7 @@ const SERVICES = [
       {
         SERVICES.map((service, index) => (
           <div
-            class="carousel-item bg-base-100 w-[90%] rounded-4xl p-4 flex flex-col"
+            class="carousel-item bg-base-200 w-[90%] rounded-4xl p-4 flex flex-col"
             id={`service-item-${index}`}
           >
             <SvgColor
@@ -79,7 +79,9 @@ const SERVICES = [
   </div>
 
   <div class="flex flex-col items-center sm:items-start mt-4">
-    <a href="/services" class="bg-base-300 px-4 py-2 rounded-4xl font-semibold"
+    <a
+      href="/services"
+      class="bg-base-content text-accent px-4 py-2 rounded-4xl font-semibold"
       >Learn more about our services</a
     >
   </div>

@@ -16,7 +16,7 @@ const lang = url.split("/")[1] === "ar" ? "ar" : "en";
   <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
   <label for="my-drawer-3" class="sr-only">Toggle navigation menu</label>
   <div
-    class="backdrop-blur-xl bg-base-300/50 fixed left-1/2 transform -translate-x-1/2 top-3 z-30 px-4 flex flex-row items-center justify-between h-16 rounded-4xl w-[calc(100%-2rem)] xl:w-6/12 sm:w-11/12 md:w-8/12 sm:mx-0"
+    class="backdrop-blur-xl bg-base-300/50 fixed left-1/2 transform -translate-x-1/2 top-3 z-30 px-1 sm:px-4 flex flex-row items-center justify-between h-16 rounded-4xl w-[calc(100%-2rem)] xl:w-6/12 sm:w-11/12 md:w-8/12 sm:mx-0"
   >
     <a href={lang === "ar" ? "/ar/" : "/"}>
       <SvgColor
@@ -26,17 +26,14 @@ const lang = url.split("/")[1] === "ar" ? "ar" : "en";
       />
     </a>
     <Button
-      text={lang === "ar" ? "احصل على عرض سعر مجاني" : "Get free quote"}
+      text={lang === "ar" ? "تسعيرة مجانية" : "Get free quote"}
       className="sm:hidden"
     />
 
-    <div class="lg:hidden flex items-center gap-0">
+    <div class="lg:hidden flex items-center gap-1">
       <LanguageController />
-      <label
-        for="my-drawer-3"
-        aria-label="open sidebar"
-        class="btn btn-square btn-ghost"
-      >
+      <ThemeController />
+      <label for="my-drawer-3" aria-label="open sidebar" class="">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -73,10 +70,9 @@ const lang = url.split("/")[1] === "ar" ? "ar" : "en";
       }
     </div>
     <div class="hidden sm:flex items-center gap-2">
-      <Button
-        text={lang === "ar" ? "احصل على عرض سعر مجاني" : "Get free quote"}
-      />
+      <Button text={lang === "ar" ? "تسعيرة مجانية" : "Get free quote"} />
       <LanguageController />
+      <ThemeController />
     </div>
   </div>
   <div class="drawer-side z-50">
@@ -108,7 +104,7 @@ const lang = url.split("/")[1] === "ar" ? "ar" : "en";
           }
         </div>
         <Button
-          text={lang === "ar" ? "احصل على عرض سعر مجاني" : "Get free quote"}
+          text={lang === "ar" ? "تسعيرة مجانية" : "Get free quote"}
           className="sm:hidden"
         />
       </div>
