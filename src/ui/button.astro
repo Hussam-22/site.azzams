@@ -1,6 +1,7 @@
 ---
 const { text, size, className } = Astro.props;
-
+const url = Astro.url.pathname;
+const lang = url.split("/")[1] === "ar" ? "ar" : "en";
 const buttonSize =
   size === "large" ? "text-xl py-3 px-6" : "text-base py-2 px-4";
 ---
@@ -11,5 +12,5 @@ const buttonSize =
     className,
   ]}
 >
-  <a href="/get-free-quote">{text}</a>
+  <a href={lang === "ar" ? "/ar/get-free-quote" : "/get-free-quote"}>{text}</a>
 </div>
