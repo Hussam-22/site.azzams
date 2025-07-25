@@ -1,0 +1,48 @@
+---
+import SvgColor from "../../ui/svg-color.astro";
+const { lang = "en" } = Astro.props;
+---
+
+<div class={Astro.props.class ?? ""}>
+  <div class:list={Astro.props.classList ?? []}>
+    <SvgColor
+      iconPath="src/assets/icons/email.svg"
+      alt="Mail Icon"
+      className={Astro.props.iconClass ?? ""}
+    />
+    <a href="mailto:info@azzams.com">info@azzams.com</a>
+  </div>
+  <div class:list={Astro.props.classList ?? []}>
+    <SvgColor
+      iconPath="src/assets/icons/phone.svg"
+      alt="Phone Icon"
+      className={Astro.props.iconClass ?? ""}
+    />
+    <a href="tel:+97145989049" style="direction: ltr;">+971 459 89049</a>
+  </div>
+  <div class:list={Astro.props.classList ?? []}>
+    <SvgColor
+      iconPath="src/assets/icons/whatsapp-white.svg"
+      alt="WhatsApp Icon"
+      className={Astro.props.iconClass ?? ""}
+    />
+    <a href="https://wa.me/97156522317" style="direction: ltr;"
+      >+971 565 22317</a
+    >
+  </div>
+
+  <p class="text-md mt-4">
+    {
+      lang === "ar"
+        ? ">مجمع دبي للاستثمار الثاني، مكتب 1-83، الطابق 1040"
+        : "Dubai Invesment Park Second, 104-0 Office 1-83"
+    }
+  </p>
+  <p class="text-md">
+    {
+      lang === "ar"
+        ? ">خدمات أنظمة الحاسوب محمد عزام الخضري"
+        : "Mohammed Azzam Alkhodhri Computer Systems Housing Services"
+    }
+  </p>
+</div>
